@@ -63,6 +63,7 @@
 
 <style lang="scss">
     .the-footer-top {
+        padding: 20px 0;
         @include bp($bp-desktop-sm) {
             display: flex;
             padding: 40px 0;

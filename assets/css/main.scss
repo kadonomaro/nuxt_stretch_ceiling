@@ -8,7 +8,7 @@ body {
 .container {
     max-width: 1260px;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 16px;
 }
 
 .page {
@@ -27,5 +27,12 @@ body {
     @include bp($bp-desktop-sm) {
         font-size: 36px;
         line-height: 44px;
+    }
+}
+
+.section-title {
+    @include bp($bp-desktop-sm) {
+        font-size: 24px;
+        font-weight: 600;
     }
 }
