@@ -22,7 +22,7 @@ const menu = [
                 hash: "#safety",
             },
             {
-                name: "Популярные вопросы",
+                name: "Частые вопросы",
                 link: "faq",
             },
         ],

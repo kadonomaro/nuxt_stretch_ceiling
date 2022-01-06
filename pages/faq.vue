@@ -1,15 +1,54 @@
 <script>
+    import { createClient } from "~/plugins/contentful.js";
+    import TheAccordion from "~/components/common/TheAccordion";
+
+    const client = createClient();
+
     export default {
         name: "HelpPage",
+        components: {
+            TheAccordion,
+        },
+        asyncData() {
+            return client
+                .getEntries({
+                    content_type: "faq",
+                    order: "-sys.createdAt",
+                })
+                .then(({ items }) => {
+                    return {
+                        faq: items,
+                    };
+                });
+        },
+        data() {
+            return {
+                activeIndex: 0,
+            };
+        },
+        methods: {
+            changeIndex(index) {
+                this.activeIndex = index;
+            },
+        },
     };
 </script>
 
 <template>
     <div class="faq-page page">
         <div class="container">
-            <h1 class="faq-page__title page-title">
-                Ответы на самые популярные вопросы
-            </h1>
+            <h1 class="faq-page__title page-title">Ответы на частые вопросы</h1>
+            <div class="faq-page__accordion">
+                <the-accordion
+                    v-for="(el, index) in faq"
+                    :key="index"
+                    :active-index="activeIndex"
+                    :index="index"
+                    :accordion="el"
+                    @change="changeIndex"
+                >
+                </the-accordion>
+            </div>
         </div>
     </div>
 </template>
@@ -19,6 +58,14 @@
         margin-bottom: 20px;
         @include bp($bp-desktop-sm) {
             margin-bottom: 40px;
+        }
+    }
+
+    .faq-page__accordion {
+        padding: 0 12px;
+        background-color: #fff;
+        @include bp($bp-desktop-sm) {
+            padding: 6px 24px;
         }
     }
 </style>

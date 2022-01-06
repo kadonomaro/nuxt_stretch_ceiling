@@ -13,10 +13,10 @@ body {
 
 .page {
     flex-grow: 1;
-    padding-top: 20px;
+    padding: 20px 0;
     background-color: #f9f9f9;
     @include bp($bp-desktop-sm) {
-        padding-top: 40px;
+        padding: 40px 0;
     }
 }
 
@@ -37,4 +37,20 @@ body {
         font-size: 24px;
         line-height: 28px;
     }
+}
+
+/**** Transitions ****/
+/* slide down */
+.slide-down-enter-active,
+.slide-down-leave-active {
+    will-change: height, opacity;
+    transition: height var(--transition-duration--slide-down) ease,
+    opacity var(--transition-duration--slide-down) ease;
+    overflow: hidden;
+}
+
+.slide-down-enter,
+.slide-down-leave-to {
+    height: 0 !important;
+    opacity: 0;
 }

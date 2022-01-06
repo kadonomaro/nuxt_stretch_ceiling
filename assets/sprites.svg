@@ -5,4 +5,7 @@
     <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="location">
         <path d="M10.4057 15.3942L8.14265 8.63992H0.788086L14.9314 0.702637L10.4057 15.3942Z" fill="#00477e"></path>
     </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="arrow">
+        <path d="M21.18 30 7 15.87 20.91 2 24 5 13 15.87 24 27l-2.82 3Z"></path>
+    </symbol>
 </svg>
