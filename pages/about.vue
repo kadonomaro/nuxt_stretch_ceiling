@@ -1,26 +1,26 @@
 <script>
     export default {
-        name: "IndexPage",
+        name: "AboutPage",
     };
 </script>
 
 <template>
-    <div class="main-page">
+    <div class="about-page">
         <div class="container">
-            <h1 class="main-page__title page-title">Натяжные потолки</h1>
+            <h1 class="about-page__title page-title">О компании</h1>
         </div>
     </div>
 </template>
 
 <style lang="scss">
-    .main-page {
+    .about-page {
         padding-top: 20px;
         @include bp($bp-desktop-sm) {
             padding-top: 40px;
         }
     }
 
-    .main-page__title {
+    .about-page__title {
         margin-bottom: 20px;
         @include bp($bp-desktop-sm) {
             margin-bottom: 40px;
