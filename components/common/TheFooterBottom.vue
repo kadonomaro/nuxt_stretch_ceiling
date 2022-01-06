@@ -32,4 +32,11 @@
             justify-content: space-between;
         }
     }
+
+    .the-footer-bottom__copy {
+        margin-bottom: 12px;
+        @include bp($bp-desktop-sm) {
+            margin-bottom: 0;
+        }
+    }
 </style>

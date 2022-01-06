@@ -18,10 +18,14 @@
 
 <style lang="scss">
     .the-header-main {
-        position: sticky;
-        z-index: 100;
-        top: 0;
-        background-color: #fff;
-        border-bottom: 1px solid $color-border;
+        display: none;
+        @include bp($bp-desktop-sm) {
+            position: sticky;
+            z-index: 100;
+            top: 0;
+            display: block;
+            background-color: #fff;
+            border-bottom: 1px solid $color-border;
+        }
     }
 </style>

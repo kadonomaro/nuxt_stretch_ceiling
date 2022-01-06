@@ -16,7 +16,13 @@
 </script>
 
 <template>
-    <NuxtLink class="home-catalog-card" to="/">
+    <NuxtLink
+        class="home-catalog-card"
+        :to="{
+            name: 'catalog-slug',
+            params: { catalog: 'catalog', slug: card.fields.slug },
+        }"
+    >
         <div class="home-catalog-card__image">
             <img :src="imageUrl" :alt="card.fields.title" />
         </div>
@@ -61,6 +67,7 @@
             height: 100%;
             transition: transform 0.2s ease-in;
             will-change: transform;
+            object-fit: cover;
         }
     }
 </style>

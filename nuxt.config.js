@@ -20,7 +20,32 @@ export default {
             { name: "format-detection", content: "telephone=no" },
         ],
         link: [
-            { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+            {
+                rel: "icon",
+                type: "image/x-icon",
+                href: "/favicons/favicon.ico",
+            },
+            {
+                rel: "apple-touch-icon",
+                sizes: "180x180",
+                href: "/favicons/apple-touch-icon.png",
+            },
+            {
+                rel: "icon",
+                type: "image/png",
+                sizes: "16x16",
+                href: "/favicons/favicon-16x16.png",
+            },
+            {
+                rel: "icon",
+                type: "image/png",
+                sizes: "32x32",
+                href: "/favicons/favicon-32x32.png",
+            },
+            {
+                rel: "manifest",
+                href: "/favicons/site.webmanifest",
+            },
             { rel: "preconnect", href: "https://fonts.googleapis.com" },
             { rel: "preconnect", href: "https://fonts.gstatic.com" },
             {
@@ -67,5 +92,41 @@ export default {
     env: {
         CTF_SPACE_ID: config.CTF_SPACE_ID,
         CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    },
+
+    router: {
+        scrollBehavior: async (to, from, savedPosition) => {
+            if (savedPosition) {
+                return savedPosition;
+            }
+
+            const findEl = (hash, x) => {
+                return (
+                    document.querySelector(hash) ||
+                    new Promise((resolve, reject) => {
+                        if (x > 50) {
+                            return resolve();
+                        }
+                        setTimeout(() => {
+                            resolve(findEl(hash, ++x || 1));
+                        }, 100);
+                    })
+                );
+            };
+
+            if (to.hash) {
+                const el = await findEl(to.hash);
+                if ("scrollBehavior" in document.documentElement.style) {
+                    return window.scrollTo({
+                        top: el.offsetTop,
+                        behavior: "smooth",
+                    });
+                } else {
+                    return window.scrollTo(0, el.offsetTop);
+                }
+            }
+
+            return { x: 0, y: 0 };
+        },
     },
 };

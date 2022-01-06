@@ -2,7 +2,7 @@
     export default {
         name: "TheFooterNavigation",
         props: {
-            list: {
+            menu: {
                 type: Object,
                 default: () => {},
             },
@@ -12,14 +12,22 @@
 
 <template>
     <nav class="the-footer-navigation">
-        <div class="the-footer-navigation__title">{{ list.title }}</div>
+        <NuxtLink
+            class="the-footer-navigation__title"
+            :to="{ name: menu.link, hash: menu.hash }"
+        >
+            {{ menu.name }}
+        </NuxtLink>
         <ul class="the-footer-navigation__list">
             <li
-                v-for="(item, i) in list.menu"
+                v-for="(item, i) in menu.sub"
                 :key="i"
                 class="the-footer-navigation__item"
             >
-                <NuxtLink class="the-footer-navigation__link" to="/">
+                <NuxtLink
+                    class="the-footer-navigation__link"
+                    :to="{ name: item.link, hash: item.hash }"
+                >
                     {{ item.name }}
                 </NuxtLink>
             </li>
@@ -28,13 +36,21 @@
 </template>
 
 <style lang="scss">
-    .the-footer-navigation {
-    }
-
     .the-footer-navigation__title {
+        display: block;
         margin-bottom: 12px;
+        color: inherit;
         font-size: 18px;
         font-weight: 500;
+    }
+
+    .the-footer-navigation__title,
+    .the-footer-navigation__link {
+        text-decoration: none;
+        transition: color 0.2s ease-in;
+        &:hover {
+            color: $color-accent;
+        }
     }
 
     .the-footer-navigation__item {
@@ -46,10 +62,5 @@
 
     .the-footer-navigation__link {
         color: $color-light;
-        text-decoration: none;
-        transition: color 0.2s ease-in;
-        &:hover {
-            color: $color-accent;
-        }
     }
 </style>

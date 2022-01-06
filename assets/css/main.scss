@@ -12,7 +12,6 @@ body {
 }
 
 .page {
-    min-height: 100vh; //
     flex-grow: 1;
     padding-top: 20px;
     background-color: #f9f9f9;
@@ -31,8 +30,11 @@ body {
 }
 
 .section-title {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
     @include bp($bp-desktop-sm) {
         font-size: 24px;
-        font-weight: 600;
+        line-height: 28px;
     }
 }

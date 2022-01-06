@@ -7,14 +7,21 @@
         name: "IndexPage",
         components: { HomeWork },
         asyncData() {
-            return client
-                .getEntries({
+            return Promise.all([
+                client.getEntries({
                     content_type: "ceiling_type",
                     order: "-sys.createdAt",
-                })
-                .then(({ items }) => {
-                    return { catalog: items };
-                });
+                }),
+                client.getEntries({
+                    content_type: "gallery",
+                    order: "-sys.createdAt",
+                }),
+            ]).then((response) => {
+                return {
+                    catalog: response[0].items,
+                    gallery: response[1].items,
+                };
+            });
         },
     };
 </script>
@@ -25,15 +32,17 @@
             <h1 class="main-page__title page-title">
                 Натяжные потолки в Крыму
             </h1>
+
             <div class="main-page__section">
-                <div class="container">
-                    <home-catalog :catalog="catalog"></home-catalog>
-                </div>
+                <home-catalog :catalog="catalog"></home-catalog>
             </div>
+
             <div class="main-page__section">
-                <div class="container">
-                    <home-work></home-work>
-                </div>
+                <home-work></home-work>
+            </div>
+
+            <div class="main-page__section">
+                <home-gallery :gallery="gallery"></home-gallery>
             </div>
         </div>
     </div>
@@ -48,9 +57,9 @@
     }
 
     .main-page__section {
-        margin-bottom: 36px;
+        margin-bottom: 32px;
         @include bp($bp-desktop-sm) {
-            margin-bottom: 72px;
+            margin-bottom: 64px;
         }
     }
 </style>

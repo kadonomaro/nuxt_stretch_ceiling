@@ -11,7 +11,7 @@
 </script>
 
 <template>
-    <section class="home-catalog">
+    <section id="types" class="home-catalog">
         <h2 class="home-catalog__title section-title">
             Виды натяжных потолков
         </h2>

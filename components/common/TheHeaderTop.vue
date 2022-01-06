@@ -32,9 +32,15 @@
 
 <style lang="scss">
     .the-header-top {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 12px 0;
+        background-color: #fff;
+        border-bottom: 1px solid $color-border;
         @include bp($bp-desktop-sm) {
+            position: static;
             padding: 24px 0;
-            border-bottom: 1px solid $color-border;
         }
     }
 
@@ -51,17 +57,18 @@
     }
 
     .the-header-top__location {
-        display: flex;
-        align-items: center;
-        font-size: 16px;
-        font-weight: 500;
-        svg {
-            width: 16px;
-            height: 16px;
-            margin-right: 6px;
-        }
+        display: none;
         @include bp($bp-desktop-sm) {
+            display: flex;
             margin-right: auto;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 500;
+            svg {
+                width: 16px;
+                height: 16px;
+                margin-right: 6px;
+            }
         }
     }
 
@@ -96,6 +103,10 @@
     }
 
     .the-header-top__callback {
-        margin-left: 30px;
+        display: none;
+        @include bp($bp-desktop-sm) {
+            display: block;
+            margin-left: 30px;
+        }
     }
 </style>

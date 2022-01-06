@@ -1,39 +1,14 @@
 <script>
+    import { menu } from "~/settings";
     import TheFooterNavigation from "~/components/common/TheFooterNavigation";
     import TheCallbackButton from "~/components/common/TheCallbackButton";
     import TheSocialLinks from "~/components/common/TheSocialLinks";
+
     export default {
         name: "TheFooterTop",
         components: { TheSocialLinks, TheCallbackButton, TheFooterNavigation },
-        computed: {
-            navigationList() {
-                return [
-                    {
-                        title: "Каталог",
-                        menu: [
-                            { name: "Натяжные потолки", link: "/" },
-                            { name: "Жалюзи", link: "/" },
-                            { name: "Цены", link: "/" },
-                        ],
-                    },
-                    {
-                        title: "Помощь",
-                        menu: [
-                            { name: "Советы по выбору", link: "/" },
-                            { name: "Как мы работаем", link: "/" },
-                            { name: "Безопасность", link: "/" },
-                            { name: "Популярные вопросы", link: "/" },
-                        ],
-                    },
-                    {
-                        title: "О компании",
-                        menu: [
-                            { name: "Отзывы", link: "/" },
-                            { name: "Контакты", link: "/" },
-                        ],
-                    },
-                ];
-            },
+        menu() {
+            return menu;
         },
     };
 </script>
@@ -42,11 +17,11 @@
     <div class="the-footer-top">
         <div class="the-footer-top__main">
             <div
-                v-for="(item, i) in navigationList"
+                v-for="(menu, i) in $options.menu()"
                 :key="i"
                 class="the-footer-top__col"
             >
-                <the-footer-navigation :list="item"></the-footer-navigation>
+                <the-footer-navigation :menu="menu"></the-footer-navigation>
             </div>
         </div>
         <div class="the-footer-top__side">
@@ -92,9 +67,11 @@
     }
 
     .the-footer-top__col {
+        margin-bottom: 16px;
         @include bp($bp-desktop-sm) {
             flex-basis: calc(100% / 3);
             max-width: calc(100% / 3);
+            margin-bottom: 0;
         }
     }
 
@@ -105,6 +82,9 @@
     }
 
     .the-footer-top__side__social {
-        margin-bottom: 40px;
+        margin-bottom: 24px;
+        @include bp($bp-desktop-sm) {
+            margin-bottom: 40px;
+        }
     }
 </style>
