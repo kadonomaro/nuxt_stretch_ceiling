@@ -4,7 +4,7 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: "nuxt_stretch_ceiling",
+        title: "Натяжные потолки в Крыму",
         htmlAttrs: {
             lang: "ru",
         },

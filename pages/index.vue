@@ -5,21 +5,14 @@
 </script>
 
 <template>
-    <div class="main-page">
+    <div class="main-page page">
         <div class="container">
-            <h1 class="main-page__title page-title">Натяжные потолки</h1>
+            <h1 class="main-page__title page-title">Виды натяжных потолков</h1>
         </div>
     </div>
 </template>
 
 <style lang="scss">
-    .main-page {
-        padding-top: 20px;
-        @include bp($bp-desktop-sm) {
-            padding-top: 40px;
-        }
-    }
-
     .main-page__title {
         margin-bottom: 20px;
         @include bp($bp-desktop-sm) {

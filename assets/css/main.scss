@@ -11,9 +11,21 @@ body {
     padding: 0 10px;
 }
 
-.page-title {
+.page {
+    min-height: 100vh; //
+    flex-grow: 1;
+    padding-top: 20px;
+    background-color: #f9f9f9;
     @include bp($bp-desktop-sm) {
-        font-size: 44px;
-        line-height: 56px;
+        padding-top: 40px;
+    }
+}
+
+.page-title {
+    font-size: 24px;
+    line-height: 30px;
+    @include bp($bp-desktop-sm) {
+        font-size: 36px;
+        line-height: 44px;
     }
 }

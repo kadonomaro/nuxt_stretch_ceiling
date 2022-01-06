@@ -18,5 +18,9 @@
 
 <style lang="scss">
     .the-header-main {
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        border-bottom: 1px solid $color-border;
     }
 </style>

@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <div class="about-page">
+    <div class="about-page page">
         <div class="container">
             <h1 class="about-page__title page-title">О компании</h1>
         </div>
@@ -13,13 +13,6 @@
 </template>
 
 <style lang="scss">
-    .about-page {
-        padding-top: 20px;
-        @include bp($bp-desktop-sm) {
-            padding-top: 40px;
-        }
-    }
-
     .about-page__title {
         margin-bottom: 20px;
         @include bp($bp-desktop-sm) {

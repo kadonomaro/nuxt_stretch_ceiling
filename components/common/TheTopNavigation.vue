@@ -50,7 +50,7 @@
 
     .the-top-navigation__link {
         display: block;
-        padding: 20px 16px;
+        padding: 16px 20px;
         font-size: 14px;
         line-height: 20px;
         color: $color-base;
@@ -64,7 +64,7 @@
             color: $color-accent;
         }
         @include bp($bp-desktop-sm) {
-            font-size: 20px;
+            font-size: 18px;
             line-height: 24px;
             font-weight: 500;
         }
