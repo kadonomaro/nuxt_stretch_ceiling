@@ -34,7 +34,7 @@
 <style lang="scss">
     .the-header-mobile-menu {
         height: 100%;
-        padding: 10px 16px 16px;
+        padding: 4px 16px 16px;
         background-color: #fff;
     }
 

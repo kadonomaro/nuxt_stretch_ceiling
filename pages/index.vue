@@ -50,9 +50,9 @@
 
 <style lang="scss">
     .main-page__title {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         @include bp($bp-desktop-sm) {
-            margin-bottom: 40px;
+            margin-bottom: 32px;
         }
     }
 

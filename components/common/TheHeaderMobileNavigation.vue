@@ -74,7 +74,7 @@
 <style lang="scss">
     .the-header-mobile-navigation__item {
         position: relative;
-        padding: 6px 0;
+        padding: 12px 0;
         &.is-opened {
             svg {
                 transform: rotate(270deg);
@@ -82,7 +82,7 @@
         }
         svg {
             position: absolute;
-            top: 8px;
+            top: 16px;
             right: 0;
             width: 12px;
             height: 12px;

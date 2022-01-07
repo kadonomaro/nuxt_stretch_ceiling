@@ -118,11 +118,11 @@ export default {
                 const el = await findEl(to.hash);
                 if ("scrollBehavior" in document.documentElement.style) {
                     return window.scrollTo({
-                        top: el.offsetTop,
+                        top: el.offsetTop - 60,
                         behavior: "smooth",
                     });
                 } else {
-                    return window.scrollTo(0, el.offsetTop);
+                    return window.scrollTo(0, el.offsetTop - 60);
                 }
             }
 

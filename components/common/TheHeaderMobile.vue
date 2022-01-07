@@ -22,6 +22,10 @@
                     ? document.body.classList.add("no-scroll")
                     : document.body.classList.remove("no-scroll");
             },
+            close() {
+                this.isOpenedMenu = false;
+                document.body.classList.remove("no-scroll");
+            },
         },
     };
 </script>
@@ -46,9 +50,7 @@
             class="the-header-mobile__menu"
             :class="{ 'is-opened': isOpenedMenu }"
         >
-            <the-header-mobile-menu
-                @on-close="isOpenedMenu = false"
-            ></the-header-mobile-menu>
+            <the-header-mobile-menu @on-close="close"></the-header-mobile-menu>
         </div>
     </div>
 </template>
