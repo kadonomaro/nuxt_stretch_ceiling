@@ -1,4 +1,6 @@
 <script>
+    import Swiper from "swiper/swiper-bundle.min";
+
     export default {
         name: "HomeGallery",
         props: {
@@ -6,6 +8,28 @@
                 type: Array,
                 default: () => [],
             },
+        },
+        data() {
+            return {
+                slider: null,
+            };
+        },
+        mounted() {
+            this.$nextTick(() => {
+                this.slider = new Swiper(".js-gallery-slider", {
+                    spaceBetween: 20,
+                    slidesPerView: 1.2,
+                    direction: "horizontal",
+                    grabCursor: true,
+                    mousewheel: {
+                        forceToAxis: true,
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        type: "progressbar",
+                    },
+                });
+            });
         },
     };
 </script>
@@ -24,6 +48,26 @@
                 <home-gallery-card :image="image"></home-gallery-card>
             </div>
         </div>
+
+        <div class="home-gallery__slider">
+            <div class="swiper-container js-gallery-slider">
+                <div class="swiper-wrapper">
+                    <div
+                        v-for="(image, i) in gallery"
+                        :key="i"
+                        class="swiper-slide"
+                    >
+                        <home-gallery-card :image="image"></home-gallery-card>
+                    </div>
+                </div>
+            </div>
+            <div
+                v-if="gallery.length > 1"
+                class="home-gallery__slider-pagination"
+            >
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -36,12 +80,35 @@
     }
 
     .home-gallery__list {
+        display: none;
         @include bp($bp-desktop-sm) {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 15px;
             grid-auto-rows: auto;
             grid-auto-flow: dense;
+        }
+    }
+
+    .home-gallery__slider {
+        position: relative;
+        margin: 0 -16px;
+        .swiper-pagination {
+            width: calc(100% - 32px);
+            height: 3px;
+            margin: 0 16px;
+            border-radius: 3px;
+            overflow: hidden;
+            background-color: $color-border;
+        }
+        .swiper-slide {
+            height: auto;
+        }
+        .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+            background-color: $color-accent;
+        }
+        @include bp($bp-desktop-sm) {
+            display: none;
         }
     }
 
@@ -55,5 +122,9 @@
                 grid-row-end: span 2;
             }
         }
+    }
+
+    .home-gallery__slider-pagination {
+        padding-top: 15px;
     }
 </style>

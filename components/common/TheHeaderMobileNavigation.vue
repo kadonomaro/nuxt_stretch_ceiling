@@ -38,7 +38,7 @@
                 :key="itemIndex"
                 class="the-header-mobile-navigation__item"
                 :class="{ 'is-opened': activeIndexes.includes(itemIndex) }"
-                @click="toggleMenu(itemIndex)"
+                @click.self="toggleMenu(itemIndex)"
             >
                 <NuxtLink
                     class="the-header-mobile-navigation__link"
@@ -88,6 +88,7 @@
             height: 12px;
             transform: rotate(180deg);
             transition: transform 0.2s ease-in;
+            pointer-events: none;
         }
     }
 
