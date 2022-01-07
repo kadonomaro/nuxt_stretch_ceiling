@@ -17,6 +17,16 @@
                     };
                 });
         },
+        data() {
+            return {
+                detail: null,
+            };
+        },
+        head() {
+            return {
+                title: this.detail.fields.title,
+            };
+        },
     };
 </script>
 

@@ -1,6 +1,11 @@
 <script>
     export default {
         name: "HelpPage",
+        head() {
+            return {
+                title: "Советы по выбору натяжных потолков",
+            };
+        },
     };
 </script>
 

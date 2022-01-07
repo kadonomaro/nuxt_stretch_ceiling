@@ -6,7 +6,8 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: "Натяжные потолки в Крыму",
+        titleTemplate: "%s - Натяжные потолки в Крыму",
+        title: "",
         htmlAttrs: {
             lang: "ru",
         },
@@ -16,7 +17,12 @@ export default {
                 name: "viewport",
                 content: "width=device-width, initial-scale=1",
             },
-            { hid: "description", name: "description", content: "" },
+            {
+                hid: "description",
+                name: "description",
+                content:
+                    "Монтаж глянцевых, матовых и сатиновых натяжных потолков в Крыму. Доступные цены, высокое качество, гарантии.",
+            },
             { name: "format-detection", content: "telephone=no" },
         ],
         link: [

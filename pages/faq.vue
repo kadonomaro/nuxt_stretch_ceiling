@@ -26,6 +26,11 @@
                 activeIndex: 0,
             };
         },
+        head() {
+            return {
+                title: "Ответы на частые вопросы",
+            };
+        },
         methods: {
             changeIndex(index) {
                 this.activeIndex = index;
