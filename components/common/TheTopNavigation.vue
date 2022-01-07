@@ -68,9 +68,10 @@
     .the-top-navigation__link {
         display: block;
         padding: 16px 20px;
+        color: $color-base;
         font-size: 14px;
         line-height: 20px;
-        color: $color-base;
+        white-space: nowrap;
         text-decoration: none;
         transition: color 0.2s ease, background-color 0.2s ease;
         &.nuxt-link-exact-active {
@@ -98,5 +99,8 @@
         opacity: 0;
         visibility: hidden;
         box-shadow: 0 5px 12px rgba(#000, 0.1);
+        .the-top-navigation__link {
+            font-size: 16px;
+        }
     }
 </style>

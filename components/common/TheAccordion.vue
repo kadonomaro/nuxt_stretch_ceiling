@@ -128,6 +128,8 @@
     .b-accordion__desc {
         padding-top: 16px;
         color: $color-light;
+        font-size: 14px;
+        line-height: 24px;
         a {
             &:hover {
                 text-decoration: underline;

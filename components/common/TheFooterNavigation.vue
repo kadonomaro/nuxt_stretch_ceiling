@@ -38,10 +38,14 @@
 <style lang="scss">
     .the-footer-navigation__title {
         display: block;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
         color: inherit;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
+        @include bp($bp-desktop-sm) {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
     }
 
     .the-footer-navigation__title,

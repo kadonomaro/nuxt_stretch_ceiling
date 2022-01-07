@@ -32,15 +32,12 @@
 
 <style lang="scss">
     .the-header-top {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        padding: 12px 0;
-        background-color: #fff;
-        border-bottom: 1px solid $color-border;
+        display: none;
         @include bp($bp-desktop-sm) {
-            position: static;
+            display: block;
             padding: 24px 0;
+            background-color: #fff;
+            border-bottom: 1px solid $color-border;
         }
     }
 
@@ -52,7 +49,7 @@
 
     .the-header-top__logo {
         @include bp($bp-desktop-sm) {
-            margin-right: 30px;
+            margin-right: 24px;
         }
     }
 
@@ -97,8 +94,7 @@
             }
         }
         @include bp($bp-desktop-sm) {
-            font-size: 18px;
-            line-height: 24px;
+            font-size: 16px;
         }
     }
 

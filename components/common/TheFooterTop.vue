@@ -38,7 +38,7 @@
 
 <style lang="scss">
     .the-footer-top {
-        padding: 20px 0;
+        padding: 16px 0;
         @include bp($bp-desktop-sm) {
             display: flex;
             padding: 40px 0;
@@ -76,9 +76,13 @@
     }
 
     .the-footer-top__title {
-        margin-bottom: 12px;
-        font-size: 18px;
+        margin-bottom: 8px;
+        font-size: 16px;
         font-weight: 500;
+        @include bp($bp-desktop-sm) {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
     }
 
     .the-footer-top__side__social {

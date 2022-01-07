@@ -14,8 +14,12 @@
     .the-logo {
         display: block;
         img {
-            width: 80px;
+            width: 60px;
+            @include bp($bp-desktop-sm) {
+                width: 80px;
+            }
         }
+
         &.nuxt-link-exact-active {
             pointer-events: none;
             cursor: default;

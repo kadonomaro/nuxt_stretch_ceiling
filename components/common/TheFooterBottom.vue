@@ -22,14 +22,16 @@
 
 <style lang="scss">
     .the-footer-bottom {
-        padding: 24px 0;
+        padding: 16px 0;
         color: $color-light;
-        font-size: 14px;
+        font-size: 12px;
         border-top: 1px solid $color-border;
         @include bp($bp-desktop-sm) {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 24px 0;
+            font-size: 14px;
         }
     }
 
