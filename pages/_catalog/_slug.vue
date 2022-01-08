@@ -1,10 +1,12 @@
 <script>
     import { createClient } from "~/plugins/contentful.js";
+    import BaseButton from "~/components/common/BaseButton";
 
     const client = createClient();
 
     export default {
         name: "CatalogPage",
+        components: { BaseButton },
         asyncData({ params }) {
             return client
                 .getEntries({
@@ -44,13 +46,14 @@
                         {{ detail.fields.title }}
                     </h1>
                     <div class="catalog-page__specs">
-                        <h2 class="catalog-page__caption section-title">
-                            Характеристики
-                        </h2>
+                        <catalog-specs
+                            :specs="detail.fields.specs"
+                        ></catalog-specs>
                     </div>
                     <div class="catalog-page__price">
                         от {{ detail.fields.price }} ₽
                     </div>
+                    <base-button>Вызвать замерщика</base-button>
                 </aside>
             </div>
         </div>
@@ -100,16 +103,12 @@
         }
     }
 
-    .catalog-page__caption {
-        color: $color-light;
-        font-weight: 300;
-    }
-
     .catalog-page__specs {
         margin-bottom: 32px;
     }
 
     .catalog-page__price {
+        margin-bottom: 24px;
         font-size: 18px;
         font-weight: 600;
         @include bp($bp-desktop-sm) {

@@ -108,7 +108,7 @@
 
     .the-header-mobile-navigation__sub-link {
         display: inline-block;
-        padding: 6px 0;
+        padding: 8px 0;
         color: $color-light;
         font-size: 14px;
         text-decoration: none;
