@@ -53,7 +53,9 @@
                     <div class="catalog-page__price">
                         от {{ detail.fields.price }} ₽
                     </div>
-                    <base-button>Вызвать замерщика</base-button>
+                    <base-button @click="$popup.show('ModalCalc')">
+                        Вызвать замерщика
+                    </base-button>
                 </aside>
             </div>
         </div>

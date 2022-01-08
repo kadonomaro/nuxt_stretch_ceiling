@@ -11,7 +11,7 @@
 </script>
 
 <template>
-    <button class="the-callback-button">
+    <button class="the-callback-button" @click="$popup.show('ModalCallback')">
         <span v-if="!isOnlyText" class="the-callback-button__icon">
             <the-svg-icon name="call"></the-svg-icon>
         </span>

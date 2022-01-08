@@ -1,10 +1,11 @@
 <script>
     import TheHeader from "~/components/common/TheHeader";
     import TheFooter from "~/components/common/TheFooter";
+    import TheModal from "~/components/common/TheModal";
 
     export default {
         name: "DefaultLayout",
-        components: { TheFooter, TheHeader },
+        components: { TheModal, TheFooter, TheHeader },
     };
 </script>
 
@@ -13,6 +14,7 @@
         <the-header></the-header>
         <Nuxt />
         <the-footer></the-footer>
+        <the-modal></the-modal>
     </div>
 </template>
 
