@@ -14,17 +14,18 @@
                 type: String,
                 default: "text",
                 validator: (value) => {
-                    return ["text", "number", "password", "tel"].includes(
-                        value
-                    );
+                    return ["text", "number", "tel", "date"].includes(value);
                 },
             },
-
             errorText: {
                 type: String,
                 default: "",
             },
             name: {
+                type: String,
+                default: "",
+            },
+            min: {
                 type: String,
                 default: "",
             },
@@ -67,6 +68,7 @@
             :type="type"
             :value="value"
             :name="name"
+            :min="min"
             @input="$emit('input', $event.target.value)"
             @focus="$emit('focus')"
             @blur="$emit('blur')"

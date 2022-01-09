@@ -33,6 +33,9 @@
 
 <style lang="scss">
     .about-reviews-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
         padding: 16px;
         background-color: #fff;
         @include bp($bp-desktop-sm) {
@@ -57,6 +60,7 @@
     }
 
     .about-reviews-card__date {
+        margin-top: auto;
         font-size: 12px;
     }
 </style>

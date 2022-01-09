@@ -1,11 +1,11 @@
 <script>
     import TheModalWrapper from "~/components/common/TheModalWrapper";
-    import BaseButton from "~/components/common/BaseButton";
     import BaseInput from "~/components/common/BaseInput";
+    import BaseButton from "~/components/common/BaseButton";
 
     export default {
         name: "ModalCallback",
-        components: { BaseInput, BaseButton, TheModalWrapper },
+        components: { TheModalWrapper, BaseInput, BaseButton },
         data() {
             return {
                 name: "",
@@ -40,8 +40,5 @@
     .modal-callback__button {
         width: 100%;
         margin-top: 12px;
-        @include bp($bp-desktop-sm) {
-            width: auto;
-        }
     }
 </style>

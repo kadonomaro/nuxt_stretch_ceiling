@@ -54,7 +54,7 @@
                         от {{ detail.fields.price }} ₽
                     </div>
                     <base-button @click="$popup.show('ModalCalc')">
-                        Вызвать замерщика
+                        Бесплатный замер
                     </base-button>
                 </aside>
             </div>

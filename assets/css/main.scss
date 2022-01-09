@@ -26,6 +26,7 @@ body {
 
 .page-title {
     font-size: 24px;
+    font-weight: 600;
     line-height: 30px;
     @include bp($bp-desktop-sm) {
         font-size: 36px;

@@ -108,7 +108,7 @@
     .base-popup {
         position: relative;
         z-index: 20;
-        max-width: 500px;
+        max-width: 400px;
         height: 100%;
         padding: 32px;
         background-color: #fff;

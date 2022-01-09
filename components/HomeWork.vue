@@ -1,6 +1,11 @@
 <script>
+    import BaseButton from "~/components/common/BaseButton";
+
     export default {
         name: "HomeWork",
+        components: {
+            BaseButton,
+        },
         list() {
             return [
                 { title: "Получаем заявку", icon: "call" },
@@ -32,6 +37,12 @@
                 <div class="home-work__caption">{{ item.title }}</div>
             </div>
         </div>
+        <base-button
+            class="home-work__button"
+            @click="$popup.show('ModalCalc')"
+        >
+            Бесплатный замер
+        </base-button>
     </section>
 </template>
 
@@ -56,6 +67,10 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
+        margin-bottom: 16px;
+        @include bp($bp-desktop-sm) {
+            margin-bottom: 32px;
+        }
     }
 
     .home-work__item {
@@ -87,5 +102,9 @@
     .home-work__caption {
         font-size: 14px;
         font-weight: 500;
+    }
+
+    .home-work__button {
+        margin: 0 auto;
     }
 </style>

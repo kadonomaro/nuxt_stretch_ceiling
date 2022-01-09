@@ -95,7 +95,7 @@
         margin: 0 -16px;
         .swiper-pagination {
             width: calc(100% - 32px);
-            height: 3px;
+            height: 2px;
             margin: 0 16px;
             border-radius: 3px;
             overflow: hidden;

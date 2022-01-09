@@ -12,8 +12,11 @@
 
 <style lang="scss">
     .base-button {
+        display: block;
         padding: 16px 24px;
         color: #fff;
+        text-decoration: none;
+        text-align: center;
         background-color: $color-accent;
         transition: background-color 0.2s ease-in;
         &:hover {
