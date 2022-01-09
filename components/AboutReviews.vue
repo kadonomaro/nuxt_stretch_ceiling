@@ -32,9 +32,11 @@
     }
 
     .about-reviews__card {
-        margin-bottom: 16px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
+        &:not(:last-child) {
+            margin-bottom: 16px;
+            @include bp($bp-desktop-sm) {
+                margin-bottom: 32px;
+            }
         }
     }
 </style>

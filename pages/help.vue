@@ -34,9 +34,11 @@
     }
 
     .help-page__section {
-        margin-bottom: 32px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 64px;
+        &:not(:last-child) {
+            margin-bottom: 32px;
+            @include bp($bp-desktop-sm) {
+                margin-bottom: 64px;
+            }
         }
     }
 </style>

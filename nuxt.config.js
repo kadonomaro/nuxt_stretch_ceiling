@@ -103,6 +103,11 @@ export default {
         CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
     },
 
+    loading: {
+        color: "#00477e",
+        height: "2px",
+    },
+
     router: {
         scrollBehavior: async (to, from, savedPosition) => {
             if (savedPosition) {

@@ -32,7 +32,7 @@
                 window.addEventListener("keyup", this.onEscapeKeyUp);
                 document.body.classList.add("no-scroll");
 
-                if (nameOrComponent === "modal-gallery") {
+                if (nameOrComponent === "ModalGallery") {
                     this.isModalGallery = true;
                 }
             },
@@ -121,20 +121,24 @@
     }
 
     .base-popup--gallery {
-        background-color: transparent;
-        border: none;
-        @include bp($bp-desktop-sm) {
-            background-color: #fff;
+        max-width: 900px;
+        .base-popup__close {
+            top: -25px;
+            right: -25px;
+            filter: brightness(0) invert(100%);
         }
     }
 
     .base-popup__close {
         position: absolute;
         z-index: 1000;
-        top: 25px;
-        right: 25px;
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
         &:after {
             content: "";
+            position: absolute;
             top: 0;
             bottom: 0;
             left: 0;
@@ -143,8 +147,8 @@
         }
         svg {
             display: block;
-            width: 16px;
-            height: 16px;
+            width: 20px;
+            height: 20px;
         }
     }
 </style>

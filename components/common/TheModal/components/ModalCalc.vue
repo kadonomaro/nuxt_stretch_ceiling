@@ -9,7 +9,7 @@
 
 <template>
     <div class="modal-calc">
-        <the-modal-wrapper title="Вызвать замерщика"></the-modal-wrapper>
+        <the-modal-wrapper title="Бесплатный замер"></the-modal-wrapper>
     </div>
 </template>
 

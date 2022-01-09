@@ -1,11 +1,9 @@
 <script>
     import { createClient } from "~/plugins/contentful.js";
-    import HomeWork from "~/components/HomeWork";
-
     const client = createClient();
+
     export default {
         name: "IndexPage",
-        components: { HomeWork },
         asyncData() {
             return Promise.all([
                 client.getEntries({
@@ -62,9 +60,11 @@
     }
 
     .main-page__section {
-        margin-bottom: 32px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 64px;
+        &:not(:last-child) {
+            margin-bottom: 32px;
+            @include bp($bp-desktop-sm) {
+                margin-bottom: 64px;
+            }
         }
     }
 </style>

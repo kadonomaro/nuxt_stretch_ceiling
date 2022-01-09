@@ -17,10 +17,10 @@ body {
 
 .page {
     flex-grow: 1;
-    padding: 20px 0;
+    padding: 20px 0 60px;
     background-color: #f9f9f9;
     @include bp($bp-desktop-sm) {
-        padding: 40px 0;
+        padding: 40px 0 100px;
     }
 }
 

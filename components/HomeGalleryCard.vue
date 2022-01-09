@@ -16,14 +16,16 @@
 </script>
 
 <template>
-    <div class="home-gallery-card">
+    <div
+        class="home-gallery-card"
+        @click="$popup.show('ModalGallery', { imageUrl })"
+    >
         <div class="home-gallery-card__image">
             <img :src="imageUrl" :alt="image.fields.title" />
             <div class="home-gallery-card__description">
                 {{ image.fields.description }}
             </div>
         </div>
-        <!--        <h3 class="home-gallery-card__title">{{ image.fields.title }}</h3>-->
     </div>
 </template>
 
@@ -32,7 +34,10 @@
         display: block;
         text-decoration: none;
         color: inherit;
-        &:hover {
+        pointer-events: none;
+        @include bp($bp-desktop-sm) {
+            pointer-events: auto;
+            cursor: pointer;
         }
     }
 

@@ -17,7 +17,7 @@
 
 <template>
     <div class="modal-callback">
-        <the-modal-wrapper title="Бесплатный звонок">
+        <the-modal-wrapper title="Обратный звонок">
             <base-input
                 v-model="name"
                 name="name"
