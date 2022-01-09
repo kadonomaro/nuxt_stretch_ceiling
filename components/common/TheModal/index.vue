@@ -108,13 +108,13 @@
     .base-popup {
         position: relative;
         z-index: 20;
-        max-width: 400px;
         height: 100%;
         padding: 32px;
         background-color: #fff;
         box-sizing: border-box;
         -webkit-overflow-scrolling: touch;
         @include bp($bp-desktop-sm) {
+            max-width: 400px;
             margin: 30px auto 10px;
             height: auto;
         }
