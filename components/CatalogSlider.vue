@@ -61,7 +61,6 @@
                         nextEl: `.js-gallery-thumbs-next`,
                         prevEl: `.js-gallery-thumbs-prev`,
                     },
-                    // ...this.optionForGalleryTop,
                     breakpoints: {
                         991: {
                             scrollbar: {
@@ -90,7 +89,10 @@
                         class="swiper-slide"
                     >
                         <div class="catalog-slider__slide">
-                            <img :src="image.fields.file.url" alt="" />
+                            <img
+                                :src="image.fields.file.url"
+                                :alt="image.fields.description"
+                            />
                         </div>
                     </div>
                 </div>
@@ -114,7 +116,7 @@
                         <img
                             class="swiper-lazy"
                             :src="image.fields.file.url"
-                            alt=""
+                            :alt="image.fields.description"
                         />
                     </div>
                 </div>

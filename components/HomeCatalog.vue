@@ -28,9 +28,6 @@
 </template>
 
 <style lang="scss">
-    .home-catalog {
-    }
-
     .home-catalog__title {
         margin-bottom: 16px;
         @include bp($bp-desktop-sm) {

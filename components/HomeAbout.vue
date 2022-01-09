@@ -35,7 +35,10 @@
             </div>
         </div>
         <div class="home-about__image">
-            <img :src="about.fields.image.fields.file.url" alt="" />
+            <img
+                :src="about.fields.image.fields.file.url"
+                :alt="about.fields.title"
+            />
         </div>
     </section>
 </template>

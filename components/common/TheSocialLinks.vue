@@ -9,12 +9,12 @@
         <ul class="the-social-links__list">
             <li class="the-social-links__item">
                 <a href="" class="the-social-links__link">
-                    <img src="/icons/instagram.svg" alt="" />
+                    <img src="/icons/instagram.svg" alt="Instagram" />
                 </a>
             </li>
             <li class="the-social-links__item">
                 <a href="" class="the-social-links__link">
-                    <img src="/icons/youtube.svg" alt="" />
+                    <img src="/icons/youtube.svg" alt="Youtube" />
                 </a>
             </li>
         </ul>
