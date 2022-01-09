@@ -55,6 +55,9 @@
         &:hover {
             color: $color-accent;
         }
+        &.nuxt-link-exact-active {
+            color: $color-accent;
+        }
     }
 
     .the-footer-navigation__item {

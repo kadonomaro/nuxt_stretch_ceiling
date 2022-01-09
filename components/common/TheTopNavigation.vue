@@ -101,6 +101,9 @@
         box-shadow: 0 5px 12px rgba(#000, 0.1);
         .the-top-navigation__link {
             font-size: 16px;
+            &.nuxt-link-active {
+                color: $color-accent;
+            }
         }
     }
 </style>

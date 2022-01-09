@@ -14,10 +14,15 @@
                     content_type: "gallery",
                     order: "-sys.createdAt",
                 }),
+                client.getEntries({
+                    content_type: "about",
+                    order: "-sys.createdAt",
+                }),
             ]).then((response) => {
                 return {
                     catalog: response[0].items,
                     gallery: response[1].items,
+                    about: response[2].items[0],
                 };
             });
         },
@@ -46,6 +51,10 @@
 
             <div class="main-page__section">
                 <home-gallery :gallery="gallery"></home-gallery>
+            </div>
+
+            <div class="main-page__section">
+                <home-about :about="about"></home-about>
             </div>
         </div>
     </div>

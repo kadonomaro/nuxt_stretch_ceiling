@@ -15,7 +15,7 @@
 </script>
 
 <template>
-    <section class="home-work">
+    <section class="home-work box-shadow">
         <h2 class="home-work__title section-title">Как мы работаем</h2>
         <div class="home-work__list">
             <div
