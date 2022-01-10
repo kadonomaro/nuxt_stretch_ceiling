@@ -28,6 +28,13 @@
         <div class="the-header-mobile__callback">
             <the-callback-button is-only-text></the-callback-button>
         </div>
+
+        <button
+            class="the-header-mobile__calc"
+            @click="$popup.show('ModalCalc')"
+        >
+            Бесплатный замер
+        </button>
     </div>
 </template>
 
@@ -51,5 +58,16 @@
         line-height: 20px;
         white-space: nowrap;
         text-decoration: none;
+    }
+
+    .the-header-mobile__calc {
+        display: flex;
+        align-items: center;
+        color: $color-accent;
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        transition: color 0.2s ease-in;
     }
 </style>
