@@ -114,7 +114,7 @@
         box-sizing: border-box;
         -webkit-overflow-scrolling: touch;
         @include bp($bp-desktop-sm) {
-            max-width: 400px;
+            max-width: 450px;
             margin: 30px auto 10px;
             height: auto;
         }
