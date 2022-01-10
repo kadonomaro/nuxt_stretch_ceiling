@@ -37,14 +37,13 @@
         },
         methods: {
             submitHandler() {
-                const date = new Date(this.user.date).toLocaleDateString(
-                    "ru-RU",
-                    {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
-                    }
-                );
+                const date = this.user.date
+                    ? new Date(this.user.date).toLocaleDateString("ru-RU", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                      })
+                    : "";
                 const request = JSON.stringify({
                     name: this.user.name,
                     phone: this.user.phone,

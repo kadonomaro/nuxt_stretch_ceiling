@@ -60,6 +60,10 @@
                 }
                 this.$emit("keyup", target.value);
             },
+            changeElement() {
+                this.error = "";
+                this.$emit("change");
+            },
         },
     };
 </script>
@@ -79,7 +83,7 @@
             @blur="$emit('blur')"
             @keyup="keyupElement"
             @click="$emit('click')"
-            @change="$emit('change')"
+            @change="changeElement"
             @keypress="$emit('keypress')"
         />
         <span v-if="error" class="base-input__error">
