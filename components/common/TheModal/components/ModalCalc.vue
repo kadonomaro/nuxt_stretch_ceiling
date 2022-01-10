@@ -13,6 +13,11 @@
                     phone: "",
                     date: "",
                 },
+                errors: {
+                    name: "",
+                    phone: "",
+                    date: "",
+                },
                 isSuccess: false,
             };
         },
@@ -50,14 +55,21 @@
                     .post("/api/send-calc", request, {
                         headers: { "content-type": "application/json" },
                     })
-                    .then(() => {
-                        this.isSuccess = true;
+                    .then(({ data }) => {
+                        if (data.success) {
+                            this.isSuccess = true;
+                        } else {
+                            data.errors.forEach((error) => {
+                                this.errors[error.param] = error.msg;
+                            });
+                        }
                     });
+            },
+            clearError(field) {
+                this.errors[field] = "";
             },
         },
     };
-
-    // TODO Валидация данных (на фронте или бэке)
 </script>
 
 <template>
@@ -76,12 +88,16 @@
                     v-model="user.name"
                     name="name"
                     placeholder="Имя"
+                    :error-text="errors.name"
+                    @error="clearError"
                 ></base-input>
                 <base-input
                     v-model="user.phone"
                     name="phone"
                     placeholder="Номер телефона"
                     type="tel"
+                    :error-text="errors.phone"
+                    @error="clearError"
                 ></base-input>
                 <base-input
                     v-model="user.date"
@@ -89,6 +105,8 @@
                     :min="currentDate"
                     placeholder="Дата замера"
                     type="date"
+                    :error-text="errors.date"
+                    @error="clearError"
                 ></base-input>
                 <base-button class="modal-calc__button">
                     Вызвать замерщика

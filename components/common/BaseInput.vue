@@ -32,12 +32,17 @@
         },
         data() {
             return {
-                error: "",
+                error: this.errorText,
             };
         },
         computed: {
             className() {
                 return this.componentClassNames("base-input").filter(Boolean);
+            },
+        },
+        watch: {
+            errorText(val) {
+                this.error = val;
             },
         },
         methods: {
