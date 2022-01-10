@@ -53,12 +53,12 @@
     .home-about__text {
         display: flex;
         flex-direction: column;
-        padding: 16px;
+        padding: 24px;
         background-color: #fff;
         @include bp($bp-desktop-sm) {
             flex-basis: 45%;
             max-width: 45%;
-            padding: 24px;
+            padding: 32px;
         }
     }
 
@@ -100,7 +100,7 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        margin-top: 16px;
+        margin: 16px -4px 0;
     }
 
     .home-about__specs-item {

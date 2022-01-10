@@ -56,7 +56,7 @@
 
     .home-catalog-card__image {
         position: relative;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         padding-bottom: 75%;
         overflow: hidden;
         img {
