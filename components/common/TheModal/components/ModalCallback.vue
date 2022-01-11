@@ -17,15 +17,18 @@
                     phone: "",
                 },
                 isSuccess: false,
+                isLoading: false,
             };
         },
         methods: {
             submitHandler() {
+                this.isLoading = true;
                 this.$axios
                     .post("/api/send-callback", JSON.stringify(this.user), {
                         headers: { "content-type": "application/json" },
                     })
                     .then(({ data }) => {
+                        this.isLoading = false;
                         if (data.success) {
                             this.isSuccess = true;
                         } else {
@@ -68,7 +71,11 @@
                     :error-text="errors.phone"
                     @error="clearError"
                 ></base-input>
-                <base-button class="modal-callback__button">
+                <base-button
+                    class="modal-callback__button"
+                    :is-loading="isLoading"
+                >
+                    <the-preloader :show="isLoading"></the-preloader>
                     Заказать звонок
                 </base-button>
             </form>

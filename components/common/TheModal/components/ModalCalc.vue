@@ -19,6 +19,7 @@
                     date: "",
                 },
                 isSuccess: false,
+                isLoading: false,
             };
         },
         computed: {
@@ -37,6 +38,7 @@
         },
         methods: {
             submitHandler() {
+                this.isLoading = true;
                 const date = this.user.date
                     ? new Date(this.user.date).toLocaleDateString("ru-RU", {
                           day: "numeric",
@@ -55,6 +57,7 @@
                         headers: { "content-type": "application/json" },
                     })
                     .then(({ data }) => {
+                        this.isLoading = false;
                         if (data.success) {
                             this.isSuccess = true;
                         } else {
@@ -107,7 +110,8 @@
                     :error-text="errors.date"
                     @error="clearError"
                 ></base-input>
-                <base-button class="modal-calc__button">
+                <base-button class="modal-calc__button" :is-loading="isLoading">
+                    <the-preloader :show="isLoading"></the-preloader>
                     Вызвать замерщика
                 </base-button>
             </form>

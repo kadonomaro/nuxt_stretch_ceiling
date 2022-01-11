@@ -71,6 +71,7 @@ export default {
     plugins: [
         { src: "~/plugins/event-bus.js" },
         { src: "~/plugins/modals.js" },
+        { src: "~/plugins/global.js" },
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
