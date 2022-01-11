@@ -19,7 +19,7 @@
 
 <style lang="scss">
     .the-preloader {
-        --preloader-size: 25px;
+        --preloader-size: 20px;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -40,16 +40,16 @@
         &:first-child {
             background-color: #7696af;
             transform: translateX(100%);
-            animation: preloaderLeft 1.6s ease-in forwards infinite;
+            animation: preloaderLeft 1.4s ease-in forwards infinite;
         }
         &:nth-child(2) {
             background-color: #40759e;
-            animation: preloaderCenter 1.6s ease-in forwards infinite;
+            animation: preloaderCenter 1.4s ease-in forwards infinite;
         }
         &:last-child {
             background-color: #00477e;
             transform: translateX(-100%);
-            animation: preloaderRight 1.6s ease-in forwards infinite;
+            animation: preloaderRight 1.4s ease-in forwards infinite;
         }
     }
 

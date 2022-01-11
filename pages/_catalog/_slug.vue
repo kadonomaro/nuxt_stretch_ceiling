@@ -88,7 +88,7 @@
     }
 
     .catalog-page__main {
-        margin-bottom: 12px;
+        margin-bottom: 24px;
         @include bp($bp-desktop-sm) {
             flex-basis: 60%;
             flex-shrink: 0;
@@ -132,12 +132,16 @@
 
     .catalog-page__price {
         margin-bottom: 24px;
-        font-size: 18px;
+        font-size: 16px;
         span {
+            font-size: 18px;
             font-weight: 600;
         }
         @include bp($bp-desktop-sm) {
-            font-size: 24px;
+            font-size: 20px;
+            span {
+                font-size: 24px;
+            }
         }
     }
 </style>
