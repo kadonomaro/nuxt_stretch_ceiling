@@ -68,11 +68,39 @@ body {
         color: $color-light;
         font-size: 14px;
         line-height: 28px;
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
     }
     a {
         display: inline-block;
         color: $color-accent;
         text-decoration: none;
+    }
+    ul {
+        padding-left: 20px;
+        color: $color-light;
+        font-size: 14px;
+        line-height: 28px;
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+        li {
+            position: relative;
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 12px;
+                left: -12px;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: $color-accent;
+            }
+        }
     }
 }
 

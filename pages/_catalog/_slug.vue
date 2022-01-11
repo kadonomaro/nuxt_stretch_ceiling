@@ -1,12 +1,13 @@
 <script>
     import { createClient } from "~/plugins/contentful.js";
     import BaseButton from "~/components/common/BaseButton";
+    import CatalogText from "~/components/common/CatalogText";
 
     const client = createClient();
 
     export default {
         name: "CatalogPage",
-        components: { BaseButton },
+        components: { CatalogText, BaseButton },
         asyncData({ params }) {
             return client
                 .getEntries({
@@ -37,9 +38,17 @@
         <div class="container">
             <div v-if="detail" class="catalog-page__inner">
                 <main class="catalog-page__main">
-                    <catalog-slider
-                        :gallery="detail.fields.gallery"
-                    ></catalog-slider>
+                    <div class="catalog-page__slider">
+                        <catalog-slider
+                            :gallery="detail.fields.gallery"
+                        ></catalog-slider>
+                    </div>
+
+                    <div v-if="detail.fields.text" class="catalog-page__text">
+                        <catalog-text
+                            :text="detail.fields.text.content"
+                        ></catalog-text>
+                    </div>
                 </main>
                 <aside class="catalog-page__aside box-shadow">
                     <h1 class="catalog-page__title page-title">
@@ -51,7 +60,7 @@
                         ></catalog-specs>
                     </div>
                     <div class="catalog-page__price">
-                        от {{ detail.fields.price }} ₽
+                        от <span>{{ detail.fields.price }}</span> ₽ за м²
                     </div>
                     <base-button @click="$popup.show('ModalCalc')">
                         Бесплатный замер
@@ -93,9 +102,21 @@
         background-color: #fff;
         padding: 16px;
         @include bp($bp-desktop-sm) {
+            position: sticky;
+            top: 80px;
             flex-grow: 1;
             padding: 32px;
         }
+    }
+
+    .catalog-page__slider {
+        margin-bottom: 24px;
+        @include bp($bp-desktop-sm) {
+            margin-bottom: 60px;
+        }
+    }
+
+    .catalog-page__text {
     }
 
     .catalog-page__title {
@@ -112,7 +133,9 @@
     .catalog-page__price {
         margin-bottom: 24px;
         font-size: 18px;
-        font-weight: 600;
+        span {
+            font-weight: 600;
+        }
         @include bp($bp-desktop-sm) {
             font-size: 24px;
         }
