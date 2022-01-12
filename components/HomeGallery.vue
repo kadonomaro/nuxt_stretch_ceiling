@@ -83,8 +83,8 @@
         display: none;
         @include bp($bp-desktop-sm) {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 15px;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 12px;
             grid-auto-rows: auto;
             grid-auto-flow: dense;
         }
@@ -117,7 +117,7 @@
         @include bp($bp-desktop-sm) {
             margin-bottom: 0;
             &:first-child,
-            &:nth-child(8) {
+            &:nth-child(11) {
                 grid-column-end: span 2;
                 grid-row-end: span 2;
             }

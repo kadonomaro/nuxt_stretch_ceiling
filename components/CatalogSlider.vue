@@ -89,10 +89,23 @@
                         class="swiper-slide"
                     >
                         <div class="catalog-slider__slide">
-                            <img
-                                :src="image.fields.file.url"
-                                :alt="image.fields.description"
-                            />
+                            <picture>
+                                <source
+                                    :data-srcset="
+                                        image.fields.file.url +
+                                        '?w=900&fm=webp&q=90'
+                                    "
+                                    type="image/webp"
+                                />
+                                <img
+                                    class="swiper-lazy"
+                                    :data-src="
+                                        image.fields.file.url +
+                                        '?w=900&fm=jpg&q=90'
+                                    "
+                                    :alt="image.fields.description"
+                                />
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -113,11 +126,22 @@
                         :key="i"
                         class="swiper-slide catalog-slider__thumbs-item"
                     >
-                        <img
-                            class="swiper-lazy"
-                            :src="image.fields.file.url"
-                            :alt="image.fields.description"
-                        />
+                        <picture>
+                            <source
+                                :data-srcset="
+                                    image.fields.file.url +
+                                    '?w=120&fm=webp&q=90'
+                                "
+                                type="image/webp"
+                            />
+                            <img
+                                class="swiper-lazy"
+                                :data-src="
+                                    image.fields.file.url + '?w=120&fm=jpg&q=90'
+                                "
+                                :alt="image.fields.description"
+                            />
+                        </picture>
                     </div>
                 </div>
             </div>

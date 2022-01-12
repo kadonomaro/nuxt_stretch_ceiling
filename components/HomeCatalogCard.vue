@@ -1,6 +1,8 @@
 <script>
+    import ResponsiveImage from "~/components/common/ResponsiveImage";
     export default {
         name: "HomeCatalogCard",
+        components: { ResponsiveImage },
         props: {
             card: {
                 type: Object,
@@ -34,24 +36,12 @@
         }"
     >
         <div class="home-catalog-card__image">
-            <picture>
-                <source
-                    media="(max-width: 600px)"
-                    :srcset="imageUrl.mobile.webp"
-                    type="image/webp"
-                />
-                <source
-                    media="(max-width: 600px)"
-                    :srcset="imageUrl.mobile.jpg"
-                />
-                <source :srcset="imageUrl.desktop.webp" type="image/webp" />
-                <img
-                    :src="imageUrl.desktop.jpg"
-                    :alt="card.fields.title"
-                    width="400"
-                    height="300"
-                />
-            </picture>
+            <responsive-image
+                :image="imageUrl"
+                :alt="card.fields.title"
+                width="400"
+                height="400"
+            ></responsive-image>
         </div>
         <h3 class="home-catalog-card__title">{{ card.fields.title }}</h3>
     </NuxtLink>

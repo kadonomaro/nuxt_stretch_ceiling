@@ -1,10 +1,27 @@
 <script>
+    import ResponsiveImage from "~/components/common/ResponsiveImage";
     export default {
         name: "HomeAbout",
+        components: { ResponsiveImage },
         props: {
             about: {
                 type: Object,
                 default: () => {},
+            },
+        },
+        computed: {
+            imageUrl() {
+                const url = this.about.fields.image.fields.file.url;
+                return {
+                    mobile: {
+                        jpg: url + "?w=600&fm=jpg&q=90",
+                        webp: url + "?w=600&fm=webp&q=90",
+                    },
+                    desktop: {
+                        jpg: url + "?w=800&fm=jpg&q=90",
+                        webp: url + "?w=800&fm=webp&q=90",
+                    },
+                };
             },
         },
     };
@@ -35,10 +52,10 @@
             </div>
         </div>
         <div class="home-about__image">
-            <img
-                :src="about.fields.image.fields.file.url"
+            <responsive-image
+                :image="imageUrl"
                 :alt="about.fields.title"
-            />
+            ></responsive-image>
         </div>
     </section>
 </template>

@@ -1,7 +1,7 @@
 <script>
     import { createClient } from "~/plugins/contentful.js";
     import BaseButton from "~/components/common/BaseButton";
-    import CatalogText from "~/components/common/CatalogText";
+    import CatalogText from "~/components/CatalogText";
 
     const client = createClient();
 
@@ -114,9 +114,6 @@
         @include bp($bp-desktop-sm) {
             margin-bottom: 60px;
         }
-    }
-
-    .catalog-page__text {
     }
 
     .catalog-page__title {
