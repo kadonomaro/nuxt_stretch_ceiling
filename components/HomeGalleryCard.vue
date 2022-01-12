@@ -9,7 +9,17 @@
         },
         computed: {
             imageUrl() {
-                return this.image.fields.image.fields.file.url;
+                const url = this.image.fields.image.fields.file.url;
+                return {
+                    mobile: {
+                        jpg: url + "?w=600&fm=jpg&q=90",
+                        webp: url + "?w=600&fm=webp&q=90",
+                    },
+                    desktop: {
+                        jpg: url + "?w=800&fm=jpg&q=90",
+                        webp: url + "?w=800&fm=webp&q=90",
+                    },
+                };
             },
         },
     };
@@ -18,10 +28,27 @@
 <template>
     <div
         class="home-gallery-card"
-        @click="$popup.show('ModalGallery', { imageUrl })"
+        @click="$popup.show('ModalGallery', { imageUrl: imageUrl.detail })"
     >
         <div class="home-gallery-card__image">
-            <img :src="imageUrl" :alt="image.fields.title" />
+            <picture>
+                <source
+                    media="(max-width: 600px)"
+                    :srcset="imageUrl.mobile.webp"
+                    type="image/webp"
+                />
+                <source
+                    media="(max-width: 600px)"
+                    :srcset="imageUrl.mobile.jpg"
+                />
+                <source :srcset="imageUrl.desktop.webp" type="image/webp" />
+                <img
+                    :src="imageUrl.desktop.jpg"
+                    :alt="image.fields.title"
+                    width="400"
+                    height="300"
+                />
+            </picture>
             <div class="home-gallery-card__description">
                 {{ image.fields.description }}
             </div>

@@ -9,7 +9,17 @@
         },
         computed: {
             imageUrl() {
-                return this.card.fields.image.fields.file.url;
+                const url = this.card.fields.image.fields.file.url;
+                return {
+                    mobile: {
+                        jpg: url + "?w=350&fm=jpg&q=90",
+                        webp: url + "?w=350&fm=webp&q=90",
+                    },
+                    desktop: {
+                        jpg: url + "?w=600&fm=jpg&q=90",
+                        webp: url + "?w=600&fm=webp&q=90",
+                    },
+                };
             },
         },
     };
@@ -24,7 +34,24 @@
         }"
     >
         <div class="home-catalog-card__image">
-            <img :src="imageUrl" :alt="card.fields.title" />
+            <picture>
+                <source
+                    media="(max-width: 600px)"
+                    :srcset="imageUrl.mobile.webp"
+                    type="image/webp"
+                />
+                <source
+                    media="(max-width: 600px)"
+                    :srcset="imageUrl.mobile.jpg"
+                />
+                <source :srcset="imageUrl.desktop.webp" type="image/webp" />
+                <img
+                    :src="imageUrl.desktop.jpg"
+                    :alt="card.fields.title"
+                    width="400"
+                    height="300"
+                />
+            </picture>
         </div>
         <h3 class="home-catalog-card__title">{{ card.fields.title }}</h3>
     </NuxtLink>

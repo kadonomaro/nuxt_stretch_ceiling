@@ -58,9 +58,15 @@
             @before-leave="start"
             @after-leave="end"
         >
-            <p v-for="(paragraph, i) in computeParagraphs" :key="i">
-                {{ paragraph.content[0].value }}
-            </p>
+            <div
+                v-for="(paragraph, i) in computeParagraphs"
+                :key="i * 2"
+                class="catalog-text__paragraph"
+            >
+                <p>
+                    {{ paragraph.content[0].value }}
+                </p>
+            </div>
         </transition-group>
 
         <button
@@ -83,8 +89,13 @@
         }
     }
 
+    .catalog-text__paragraph {
+        p {
+            margin-bottom: 12px;
+        }
+    }
+
     .catalog-text__button {
-        margin-top: 8px;
         padding: 8px 0;
         color: $color-accent;
         font-size: 14px;
