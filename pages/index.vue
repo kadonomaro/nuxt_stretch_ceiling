@@ -43,9 +43,7 @@
 <template>
     <div class="main-page page">
         <div class="container">
-            <h1 class="main-page__title page-title">
-                Натяжные потолки в Крыму
-            </h1>
+            <h1 class="page-title">Натяжные потолки в Крыму</h1>
 
             <div class="main-page__section">
                 <home-catalog :catalog="catalog"></home-catalog>
@@ -71,13 +69,6 @@
 </template>
 
 <style lang="scss">
-    .main-page__title {
-        margin-bottom: 16px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
-        }
-    }
-
     .main-page__section {
         &:not(:last-child) {
             margin-bottom: 32px;

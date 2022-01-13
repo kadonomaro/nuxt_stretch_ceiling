@@ -12,7 +12,7 @@
 <template>
     <div class="help-page page">
         <div class="container">
-            <h1 class="help-page__title page-title">Помощь</h1>
+            <h1 class="page-title">Помощь</h1>
 
             <div class="help-page__section">
                 <help-advice></help-advice>
@@ -26,13 +26,6 @@
 </template>
 
 <style lang="scss">
-    .help-page__title {
-        margin-bottom: 16px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
-        }
-    }
-
     .help-page__section {
         &:not(:last-child) {
             margin-bottom: 32px;

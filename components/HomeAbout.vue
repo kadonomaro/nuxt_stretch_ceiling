@@ -30,9 +30,7 @@
 <template>
     <section class="home-about box-shadow">
         <div class="home-about__text">
-            <h2 class="home-about__title section-title">
-                {{ about.fields.title }}
-            </h2>
+            <h2 class="section-title">{{ about.fields.title }}</h2>
             <div class="home-about__description">
                 {{ about.fields.description }}
             </div>
@@ -96,13 +94,6 @@
         @include bp($bp-desktop-sm) {
             flex-basis: 55%;
             max-width: 55%;
-        }
-    }
-
-    .home-about__title {
-        margin-bottom: 16px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
         }
     }
 

@@ -36,9 +36,7 @@
 
 <template>
     <section id="gallery" class="home-gallery">
-        <h2 class="home-gallery__title section-title">
-            Натяжные потолки в интерьере
-        </h2>
+        <h2 class="section-title">Натяжные потолки в интерьере</h2>
         <div class="home-gallery__list">
             <div
                 v-for="(image, i) in gallery"
@@ -72,13 +70,6 @@
 </template>
 
 <style lang="scss">
-    .home-gallery__title {
-        margin-bottom: 16px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
-        }
-    }
-
     .home-gallery__list {
         display: none;
         @include bp($bp-desktop-sm) {

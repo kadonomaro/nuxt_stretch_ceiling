@@ -42,7 +42,7 @@
 
 <template>
     <section class="home-reviews">
-        <h2 class="home-reviews__title section-title">Отзывы клиентов</h2>
+        <h2 class="section-title">Отзывы клиентов</h2>
         <div class="home-reviews__slider">
             <div class="swiper-container js-reviews-slider">
                 <div class="swiper-wrapper">
@@ -74,13 +74,6 @@
 </template>
 
 <style lang="scss">
-    .home-reviews__title {
-        margin-bottom: 16px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
-        }
-    }
-
     .home-reviews__slider {
         position: relative;
         .swiper-pagination-reviews {

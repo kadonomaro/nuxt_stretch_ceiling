@@ -51,7 +51,7 @@
                     </div>
                 </main>
                 <aside class="catalog-page__aside box-shadow">
-                    <h1 class="catalog-page__title page-title">
+                    <h1 class="page-title">
                         {{ detail.fields.title }}
                     </h1>
                     <div class="catalog-page__specs">
@@ -113,13 +113,6 @@
         margin-bottom: 24px;
         @include bp($bp-desktop-sm) {
             margin-bottom: 60px;
-        }
-    }
-
-    .catalog-page__title {
-        margin-bottom: 16px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
         }
     }
 

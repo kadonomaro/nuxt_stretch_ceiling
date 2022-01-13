@@ -27,7 +27,10 @@
 <template>
     <div class="about-page page">
         <div class="container">
-            <h1 class="about-page__title page-title">О компании</h1>
+            <h1 class="page-title">О компании</h1>
+            <div class="about-page__contacts">
+                <about-contacts></about-contacts>
+            </div>
             <div class="about-page__reviews">
                 <about-reviews :reviews="reviews"></about-reviews>
             </div>
@@ -36,10 +39,10 @@
 </template>
 
 <style lang="scss">
-    .about-page__title {
-        margin-bottom: 16px;
+    .about-page__contacts {
+        margin-bottom: 32px;
         @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
+            margin-bottom: 64px;
         }
     }
 </style>

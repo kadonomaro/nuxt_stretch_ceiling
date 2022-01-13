@@ -42,7 +42,7 @@
 <template>
     <div class="faq-page page">
         <div class="container">
-            <h1 class="faq-page__title page-title">Ответы на частые вопросы</h1>
+            <h1 class="page-title">Ответы на частые вопросы</h1>
             <div class="faq-page__accordion box-shadow">
                 <the-accordion
                     v-for="(el, index) in faq"
@@ -59,13 +59,6 @@
 </template>
 
 <style lang="scss">
-    .faq-page__title {
-        margin-bottom: 16px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
-        }
-    }
-
     .faq-page__accordion {
         padding: 0 12px;
         background-color: #fff;

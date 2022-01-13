@@ -12,9 +12,7 @@
 
 <template>
     <section id="types" class="home-catalog">
-        <h2 class="home-catalog__title section-title">
-            Виды натяжных потолков
-        </h2>
+        <h2 class="section-title">Виды натяжных потолков</h2>
         <div class="home-catalog__list">
             <div
                 v-for="(card, i) in catalog"
@@ -28,13 +26,6 @@
 </template>
 
 <style lang="scss">
-    .home-catalog__title {
-        margin-bottom: 16px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
-        }
-    }
-
     .home-catalog__list {
         display: flex;
         flex-wrap: wrap;

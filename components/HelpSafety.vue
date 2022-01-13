@@ -6,7 +6,7 @@
 
 <template>
     <section id="safety" class="help-safety typography box-shadow">
-        <h2 class="help-safety__title section-title">Безопасность</h2>
+        <h2 class="section-title">Безопасность</h2>
         <div class="help-safety__text">
             <p>
                 Монтаж натяжных потолков производится с помощью газовый тепловой
@@ -44,13 +44,6 @@
         background-color: #fff;
         @include bp($bp-desktop-sm) {
             padding: 24px;
-        }
-    }
-
-    .help-safety__title {
-        margin-bottom: 16px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
         }
     }
 </style>

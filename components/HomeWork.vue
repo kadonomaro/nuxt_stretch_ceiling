@@ -21,7 +21,7 @@
 
 <template>
     <section class="home-work box-shadow">
-        <h2 class="home-work__title section-title">Как мы работаем</h2>
+        <h2 class="section-title">Как мы работаем</h2>
         <div class="home-work__list">
             <div
                 v-for="(item, i) in $options.list()"
@@ -52,13 +52,6 @@
         background-color: #fff;
         @include bp($bp-desktop-sm) {
             padding: 32px 40px;
-        }
-    }
-
-    .home-work__title {
-        margin-bottom: 24px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
         }
     }
 

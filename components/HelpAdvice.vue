@@ -6,7 +6,7 @@
 
 <template>
     <section id="advice" class="help-advice typography box-shadow">
-        <h2 class="help-advice__title section-title">Советы по выбору</h2>
+        <h2 class="section-title">Советы по выбору</h2>
         <div class="help-advice__text">
             <p>
                 Самый простой способ получить информацию по выбору полотна,
@@ -133,13 +133,6 @@
         background-color: #fff;
         @include bp($bp-desktop-sm) {
             padding: 24px;
-        }
-    }
-
-    .help-advice__title {
-        margin-bottom: 16px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 32px;
         }
     }
 
