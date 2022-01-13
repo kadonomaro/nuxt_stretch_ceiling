@@ -19,8 +19,8 @@
                     <the-svg-icon name="location"></the-svg-icon>
                     <span>Крым</span>
                 </div>
-                <a href="tel:79111111111" class="the-header-top__phone">
-                    +7 (911) 111-11-11
+                <a href="tel:89111111111" class="the-header-top__phone">
+                    8 (911) 111-11-11
                 </a>
                 <div class="the-header-top__callback">
                     <the-callback-button></the-callback-button>
