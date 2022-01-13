@@ -3,7 +3,7 @@
         name: "ErrorLayout",
         head() {
             return {
-                title: "Страницы не найдена",
+                title: "Страница не найдена",
             };
         },
     };

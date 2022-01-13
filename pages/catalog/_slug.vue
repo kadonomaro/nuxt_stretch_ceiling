@@ -8,7 +8,7 @@
     export default {
         name: "CatalogPage",
         components: { CatalogText, BaseButton },
-        asyncData({ app, params }) {
+        asyncData({ params, error }) {
             return client
                 .getEntries({
                     content_type: "detail",
@@ -23,8 +23,8 @@
                         throw new Error("Page not found");
                     }
                 })
-                .catch(() => {
-                    app.router.push({ name: "error" });
+                .catch((err) => {
+                    error(err);
                 });
         },
         data() {
