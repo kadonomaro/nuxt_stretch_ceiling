@@ -48,6 +48,18 @@ body {
     }
 }
 
+.mobile-hidden {
+    @media screen and (max-width: 991px) {
+        display: none !important;
+    }
+}
+
+.desktop-hidden {
+    @include bp($bp-desktop-sm) {
+        display: none !important;
+    }
+}
+
 .box-shadow {
     box-shadow: 0 0 15px rgba(#000, 0.05);
 }

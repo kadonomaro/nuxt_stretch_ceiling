@@ -8,16 +8,23 @@
     export default {
         name: "CatalogPage",
         components: { CatalogText, BaseButton },
-        asyncData({ params }) {
+        asyncData({ app, params }) {
             return client
                 .getEntries({
                     content_type: "detail",
-                    "fields.slug[in]": params.slug,
+                    "fields.slug[in]": params.slug || "",
                 })
                 .then(({ items }) => {
-                    return {
-                        detail: items[0],
-                    };
+                    if (items.length) {
+                        return {
+                            detail: items[0],
+                        };
+                    } else {
+                        throw new Error("Page not found");
+                    }
+                })
+                .catch(() => {
+                    app.router.push({ name: "error" });
                 });
         },
         data() {
@@ -27,7 +34,7 @@
         },
         head() {
             return {
-                title: this.detail.fields.title,
+                title: this.detail?.fields?.title,
             };
         },
     };

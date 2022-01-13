@@ -52,8 +52,6 @@ export default {
                 rel: "manifest",
                 href: "/favicons/site.webmanifest",
             },
-            { rel: "preconnect", href: "https://fonts.googleapis.com" },
-            { rel: "preconnect", href: "https://fonts.gstatic.com" },
         ],
     },
 
@@ -104,6 +102,8 @@ export default {
         color: "#00477e",
         height: "2px",
     },
+
+    generate: { fallback: true },
 
     router: {
         scrollBehavior: async (to, from, savedPosition) => {
