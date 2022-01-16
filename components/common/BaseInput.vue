@@ -1,6 +1,11 @@
 <script>
+    import { VueMaskDirective } from "v-mask";
+
     export default {
         name: "BaseInput",
+        directives: {
+            mask: VueMaskDirective,
+        },
         props: {
             value: {
                 type: String,
@@ -26,6 +31,10 @@
                 default: "",
             },
             min: {
+                type: String,
+                default: "",
+            },
+            mask: {
                 type: String,
                 default: "",
             },
@@ -71,6 +80,7 @@
 <template>
     <label class="base-input">
         <input
+            v-mask="mask"
             class="base-input__field"
             :class="className"
             :placeholder="placeholder"

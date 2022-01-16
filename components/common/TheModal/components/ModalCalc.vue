@@ -95,6 +95,7 @@
                 ></base-input>
                 <base-input
                     v-model="user.phone"
+                    mask="# (###) ###-##-##"
                     name="phone"
                     placeholder="Номер телефона"
                     type="tel"
