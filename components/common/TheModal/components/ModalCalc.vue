@@ -2,16 +2,18 @@
     import TheModalWrapper from "~/components/common/TheModalWrapper";
     import BaseButton from "~/components/common/BaseButton";
     import BaseInput from "~/components/common/BaseInput";
+    import BaseSelect from "~/components/common/BaseSelect";
 
     export default {
         name: "ModalCalc",
-        components: { TheModalWrapper, BaseInput, BaseButton },
+        components: { BaseSelect, TheModalWrapper, BaseInput, BaseButton },
         data() {
             return {
                 user: {
                     name: "",
                     phone: "",
                     date: "",
+                    city: "",
                 },
                 errors: {
                     name: "",
@@ -49,6 +51,7 @@
                 const request = JSON.stringify({
                     name: this.user.name,
                     phone: this.user.phone,
+                    city: this.user.city,
                     date,
                 });
 
@@ -111,6 +114,11 @@
                     :error-text="errors.date"
                     @error="clearError"
                 ></base-input>
+                <base-select
+                    v-model="user.city"
+                    name="city"
+                    :list="['Севастополь', 'Симферополь']"
+                ></base-select>
                 <base-button class="modal-calc__button" :is-loading="isLoading">
                     <the-preloader :show="isLoading"></the-preloader>
                     Вызвать замерщика
