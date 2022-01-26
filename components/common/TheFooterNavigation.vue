@@ -44,7 +44,6 @@
         font-weight: 500;
         @include bp($bp-desktop-sm) {
             margin-bottom: 12px;
-            font-size: 18px;
         }
     }
 

@@ -6,13 +6,7 @@
 
 <template>
     <NuxtLink class="the-logo" :to="{ name: 'index' }">
-        <picture>
-            <source
-                media="(max-width: 991px)"
-                srcset="/images/logo--mobile.png"
-            />
-            <img src="/images/logo.png" alt="Натяжные потолки" />
-        </picture>
+        <img src="/images/logo.png" alt="Натяжные потолки" />
     </NuxtLink>
 </template>
 
@@ -20,9 +14,9 @@
     .the-logo {
         display: block;
         img {
-            width: 150px;
+            height: 50px;
             @include bp($bp-desktop-sm) {
-                width: 120px;
+                height: 60px;
             }
         }
 

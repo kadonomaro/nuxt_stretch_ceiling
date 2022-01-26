@@ -31,9 +31,10 @@
     <section class="home-about box-shadow">
         <div class="home-about__text">
             <h2 class="section-title">{{ about.fields.title }}</h2>
-            <div class="home-about__description">
-                {{ about.fields.description }}
-            </div>
+            <div
+                class="home-about__description"
+                v-html="about.fields.description"
+            ></div>
             <div class="home-about__specs">
                 <div class="home-about__specs-item">
                     <div>5</div>
