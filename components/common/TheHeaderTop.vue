@@ -35,7 +35,7 @@
         display: none;
         @include bp($bp-desktop-sm) {
             display: block;
-            padding: 24px 0;
+            padding: 12px 0;
             background-color: #fff;
             border-bottom: 1px solid $color-border;
         }
