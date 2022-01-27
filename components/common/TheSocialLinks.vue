@@ -64,5 +64,11 @@
         img {
             width: 100%;
         }
+        @include bp($bp-desktop-sm) {
+            transition: transform 0.2s ease-in;
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
     }
 </style>

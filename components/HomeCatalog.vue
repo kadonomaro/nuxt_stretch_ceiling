@@ -7,6 +7,13 @@
                 default: () => [],
             },
         },
+        computed: {
+            sortedCatalog() {
+                return [...this.catalog].sort(
+                    (a, b) => a.fields.sort - b.fields.sort
+                );
+            },
+        },
     };
 </script>
 
@@ -15,7 +22,7 @@
         <h2 class="section-title">Виды натяжных потолков</h2>
         <div class="home-catalog__list">
             <div
-                v-for="(card, i) in catalog"
+                v-for="(card, i) in sortedCatalog"
                 :key="i"
                 class="home-catalog__card"
             >
