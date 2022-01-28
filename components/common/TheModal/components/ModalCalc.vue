@@ -37,6 +37,20 @@
                     day < 10 ? "0" + day : day,
                 ].join("-");
             },
+            cityList() {
+                return [
+                    "Севастополь",
+                    "Керчь",
+                    "Симферополь",
+                    "Бахчисарай",
+                    "Феодосия",
+                    "Щелкино",
+                    "Саки",
+                    "Джанкой",
+                    "Судак ",
+                    "Красноперекопск ",
+                ].sort((a, b) => a - b);
+            },
         },
         methods: {
             submitHandler() {
@@ -117,7 +131,7 @@
                 <base-select
                     v-model="user.city"
                     name="city"
-                    :list="['Севастополь', 'Симферополь']"
+                    :list="cityList"
                 ></base-select>
                 <base-button class="modal-calc__button" :is-loading="isLoading">
                     <the-preloader :show="isLoading"></the-preloader>

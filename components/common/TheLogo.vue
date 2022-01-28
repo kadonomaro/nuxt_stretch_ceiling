@@ -16,7 +16,7 @@
         img {
             height: 50px;
             @include bp($bp-desktop-sm) {
-                height: 60px;
+                height: 70px;
             }
         }
 
