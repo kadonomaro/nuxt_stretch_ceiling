@@ -45,7 +45,7 @@
     .home-catalog__card {
         flex-basis: 50%;
         max-width: 50%;
-        padding: 0 6px 12px;
+        padding: 0 6px 18px;
         @include bp($bp-desktop-sm) {
             flex-basis: 33.3333%;
             max-width: 33.3333%;

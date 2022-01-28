@@ -75,7 +75,7 @@
         @include bp($bp-desktop-sm) {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            grid-gap: 12px;
+            grid-gap: 5px;
             grid-auto-rows: auto;
             grid-auto-flow: dense;
         }

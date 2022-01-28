@@ -13,6 +13,6 @@
         pointer-events: none;
     }
     &:hover:not(.is-loading) {
-        background-color: #40759e;
+        background-color: $color-base;
     }
 }

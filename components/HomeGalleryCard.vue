@@ -61,8 +61,8 @@
         padding-bottom: 100%;
         overflow: hidden;
         &:hover {
-            .home-gallery-card__description {
-                opacity: 1;
+            img {
+                transform: scale(1.03);
             }
         }
         img {
@@ -72,6 +72,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.2s ease-in;
+            will-change: transform;
         }
     }
 </style>
