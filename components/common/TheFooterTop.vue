@@ -25,10 +25,12 @@
             </div>
         </div>
         <div class="the-footer-top__side">
-            <div class="the-footer-top__title">Мы в социальных сетях</div>
-            <div class="the-footer-top__side__social">
+            <div class="the-footer-top__title">Наши контакты</div>
+            <div class="the-footer-top__social">
                 <the-social-links></the-social-links>
             </div>
+            <div class="the-footer-top__title">График работы</div>
+            <div class="the-footer-top__work">Пн-Вс с 8:00 до 20:00</div>
             <div class="the-footer-top__callback">
                 <the-callback-button></the-callback-button>
             </div>
@@ -41,7 +43,7 @@
         padding: 16px 0;
         @include bp($bp-desktop-sm) {
             display: flex;
-            padding: 40px 0;
+            padding: 32px 0;
         }
     }
 
@@ -67,7 +69,7 @@
     }
 
     .the-footer-top__col {
-        margin-bottom: 16px;
+        margin-bottom: 24px;
         @include bp($bp-desktop-sm) {
             flex-basis: calc(100% / 3);
             max-width: calc(100% / 3);
@@ -81,14 +83,16 @@
         font-weight: 500;
         @include bp($bp-desktop-sm) {
             margin-bottom: 12px;
-            font-size: 18px;
         }
     }
 
-    .the-footer-top__side__social {
+    .the-footer-top__social {
         margin-bottom: 24px;
-        @include bp($bp-desktop-sm) {
-            margin-bottom: 40px;
-        }
+    }
+
+    .the-footer-top__work {
+        margin-bottom: 24px;
+        color: $color-light;
+        font-size: 14px;
     }
 </style>

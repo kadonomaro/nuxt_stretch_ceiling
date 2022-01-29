@@ -32,7 +32,11 @@
         <div class="home-about__text">
             <h2 class="section-title">{{ about.fields.title }}</h2>
             <div class="home-about__description">
-                {{ about.fields.description }}
+                <p
+                    v-for="(p, i) in about.fields.description.content"
+                    :key="i"
+                    v-html="p.content[0].value"
+                ></p>
             </div>
             <div class="home-about__specs">
                 <div class="home-about__specs-item">
@@ -102,6 +106,11 @@
         color: $color-light;
         font-size: 14px;
         line-height: 24px;
+        p {
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+        }
     }
 
     .home-about__specs {

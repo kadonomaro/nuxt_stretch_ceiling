@@ -7,6 +7,13 @@
                 default: () => [],
             },
         },
+        computed: {
+            sortedCatalog() {
+                return [...this.catalog].sort(
+                    (a, b) => a.fields.sort - b.fields.sort
+                );
+            },
+        },
     };
 </script>
 
@@ -15,7 +22,7 @@
         <h2 class="section-title">Виды натяжных потолков</h2>
         <div class="home-catalog__list">
             <div
-                v-for="(card, i) in catalog"
+                v-for="(card, i) in sortedCatalog"
                 :key="i"
                 class="home-catalog__card"
             >
@@ -38,7 +45,7 @@
     .home-catalog__card {
         flex-basis: 50%;
         max-width: 50%;
-        padding: 0 6px 12px;
+        padding: 0 6px 18px;
         @include bp($bp-desktop-sm) {
             flex-basis: 33.3333%;
             max-width: 33.3333%;

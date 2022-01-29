@@ -12,7 +12,7 @@
 <template>
     <div class="the-footer-bottom">
         <div class="the-footer-bottom__copy">
-            © 2019—{{ getCurrentYear }} «Крым наш». Все права защищены
+            © 2019—{{ getCurrentYear }} «Barneo.sev». Все права защищены
         </div>
         <div class="the-footer-bottom__developer">
             Разработка сайта - Airsoftware

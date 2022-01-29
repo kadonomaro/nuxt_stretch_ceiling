@@ -40,12 +40,6 @@
                 width="400"
                 height="400"
             ></responsive-image>
-            <div
-                v-if="image.fields.description"
-                class="home-gallery-card__description"
-            >
-                {{ image.fields.description }}
-            </div>
         </div>
     </div>
 </template>
@@ -67,8 +61,8 @@
         padding-bottom: 100%;
         overflow: hidden;
         &:hover {
-            .home-gallery-card__description {
-                opacity: 1;
+            img {
+                transform: scale(1.03);
             }
         }
         img {
@@ -78,25 +72,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.2s ease-in;
+            will-change: transform;
         }
-    }
-
-    .home-gallery-card__description {
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        color: #fff;
-        font-weight: 500;
-        text-align: center;
-        background-color: rgba(#000, 0.8);
-        opacity: 0;
-        transition: opacity 0.2s ease-in;
     }
 </style>

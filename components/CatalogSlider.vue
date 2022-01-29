@@ -177,16 +177,13 @@
 
     .catalog-slider__thumbs-slider {
         @include bp($bp-desktop-sm) {
-            height: 500px;
+            height: 620px;
         }
     }
 
     .catalog-slider__thumbs-item {
         position: relative;
         border: 2px solid transparent;
-        @include bp($bp-desktop-sm) {
-            padding-bottom: 100%;
-        }
         img {
             position: absolute;
             top: 0;
@@ -199,7 +196,8 @@
             width: 40px;
             height: 40px;
             @include bp($bp-desktop-sm) {
-                width: 80px;
+                width: 80px !important;
+                height: 80px !important;
             }
         }
         &.swiper-slide-thumb-active {

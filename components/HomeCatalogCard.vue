@@ -53,11 +53,12 @@
         text-decoration: none;
         color: inherit;
         &:hover {
-            .home-catalog-card__image img {
-                transform: scale(1.03);
-            }
-            .home-catalog-card__title {
-                color: $color-accent;
+            .home-catalog-card__image {
+                transform: translate(-4px, -4px);
+                &::before {
+                    opacity: 1;
+                    transform: translate(8px, 8px);
+                }
             }
         }
     }
@@ -65,7 +66,6 @@
     .home-catalog-card__title {
         font-size: 14px;
         font-weight: 500;
-        transition: color 0.2s ease-in;
         @include bp($bp-desktop-sm) {
             font-size: 16px;
         }
@@ -73,17 +73,28 @@
 
     .home-catalog-card__image {
         position: relative;
-        margin-bottom: 6px;
+        margin-bottom: 10px;
         padding-bottom: 75%;
-        overflow: hidden;
+        transition: transform 0.2s ease-in;
+        will-change: transform;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: $color-accent;
+            opacity: 0;
+            transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+            will-change: transform;
+        }
         img {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            transition: transform 0.2s ease-in;
-            will-change: transform;
             object-fit: cover;
         }
     }

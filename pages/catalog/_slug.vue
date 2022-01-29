@@ -61,7 +61,7 @@
                     <h1 class="page-title">
                         {{ detail.fields.title }}
                     </h1>
-                    <div class="catalog-page__specs">
+                    <div v-if="detail.fields.specs" class="catalog-page__specs">
                         <catalog-specs
                             :specs="detail.fields.specs"
                         ></catalog-specs>
@@ -69,7 +69,13 @@
                     <div class="catalog-page__price">
                         от <span>{{ detail.fields.price }}</span> ₽ за м²
                     </div>
-                    <base-button @click="$popup.show('ModalCalc')">
+                    <base-button
+                        @click="
+                            $popup.show('ModalCalc', {
+                                target: detail.fields.title,
+                            })
+                        "
+                    >
                         Бесплатный замер
                     </base-button>
                 </aside>

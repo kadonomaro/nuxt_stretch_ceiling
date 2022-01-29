@@ -17,18 +17,28 @@
                 </div>
                 <div class="about-contacts__item">
                     <the-svg-icon name="phone"></the-svg-icon>
-                    <a class="about-contacts__link" href="tel:89111111111">
-                        8 (911) 111-11-11
+                    <a class="about-contacts__link" href="tel:+79785860623">
+                        +7 (978) 586 06-23
+                    </a>
+                </div>
+                <div class="about-contacts__item">
+                    <the-svg-icon name="phone"></the-svg-icon>
+                    <a class="about-contacts__link" href="tel:+79782385740">
+                        +7 (978) 238 57-40
                     </a>
                 </div>
                 <div class="about-contacts__item">
                     <the-svg-icon name="mail"></the-svg-icon>
                     <a
                         class="about-contacts__link"
-                        href="mailto:krymnash@gmail.com"
+                        href="mailto:barneo.sev@yandex.ru"
                     >
-                        krymnash@gmail.com
+                        barneo.sev@yandex.ru
                     </a>
+                </div>
+                <div class="about-contacts__item">
+                    <the-svg-icon name="calendar"></the-svg-icon>
+                    Пн-Вс с 8:00 до 20:00
                 </div>
             </div>
             <div class="about-contacts__map">
@@ -74,7 +84,7 @@
             fill: $color-accent;
         }
         &:not(:last-child) {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
         @include bp($bp-desktop-sm) {
             font-size: 16px;
