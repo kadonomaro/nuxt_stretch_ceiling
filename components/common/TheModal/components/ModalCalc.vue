@@ -7,6 +7,12 @@
     export default {
         name: "ModalCalc",
         components: { BaseSelect, TheModalWrapper, BaseInput, BaseButton },
+        props: {
+            target: {
+                type: String,
+                default: "",
+            },
+        },
         data() {
             return {
                 user: {
@@ -67,6 +73,7 @@
                     phone: this.user.phone,
                     city: this.user.city,
                     date,
+                    target: this.target,
                 });
 
                 this.$axios

@@ -69,7 +69,13 @@
                     <div class="catalog-page__price">
                         от <span>{{ detail.fields.price }}</span> ₽ за м²
                     </div>
-                    <base-button @click="$popup.show('ModalCalc')">
+                    <base-button
+                        @click="
+                            $popup.show('ModalCalc', {
+                                target: detail.fields.title,
+                            })
+                        "
+                    >
                         Бесплатный замер
                     </base-button>
                 </aside>
