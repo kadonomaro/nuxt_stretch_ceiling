@@ -1,4 +1,10 @@
 const config = require("./.contentful.json");
+const contentful = require("contentful");
+
+const client = contentful.createClient({
+    space: "0rwtfw90ylg8",
+    accessToken: "wgPUSGDRJVUgc_KD5yOvLNUJm6drhGWuywkI3tKA6oE",
+});
 
 export default {
     // Target: https://go.nuxtjs.dev/config-target
@@ -21,7 +27,7 @@ export default {
                 hid: "description",
                 name: "description",
                 content:
-                    "Монтаж глянцевых, матовых и сатиновых натяжных потолков в Крыму. Доступные цены, высокое качество, гарантии.",
+                    "Эксперты в области креативных и нестандартных решений для натяжных потолков в городе Севастополь и в Республике Крым",
             },
             { name: "format-detection", content: "telephone=no" },
         ],
@@ -79,9 +85,10 @@ export default {
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
-        // https://go.nuxtjs.dev/axios
         "@nuxtjs/axios",
         "@nuxtjs/style-resources",
+        "@nuxtjs/robots",
+        "@nuxtjs/sitemap",
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -104,6 +111,22 @@ export default {
     },
 
     generate: { fallback: true },
+
+    robots: {
+        UserAgent: "*",
+        Sitemap: "https://nuxt-stretch-ceiling.web.app/sitemap.xml",
+    },
+
+    sitemap: {
+        hostname: "https://nuxt-stretch-ceiling.web.app/",
+        routes: async () => {
+            const response = await client.getEntries({
+                content_type: "ceiling_type",
+                order: "-sys.createdAt",
+            });
+            return response.items.map((page) => `/catalog/${page.fields.slug}`);
+        },
+    },
 
     router: {
         scrollBehavior: async (to, from, savedPosition) => {

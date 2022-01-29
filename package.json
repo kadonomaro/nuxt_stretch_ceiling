@@ -29,6 +29,8 @@
         "@babel/eslint-parser": "^7.16.3",
         "@nuxtjs/eslint-config": "^8.0.0",
         "@nuxtjs/eslint-module": "^3.0.2",
+        "@nuxtjs/robots": "^2.5.0",
+        "@nuxtjs/sitemap": "^2.4.0",
         "@nuxtjs/style-resources": "^1.2.1",
         "eslint": "^8.4.1",
         "eslint-config-prettier": "^8.3.0",
