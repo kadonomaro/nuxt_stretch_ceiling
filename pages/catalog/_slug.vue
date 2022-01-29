@@ -61,7 +61,7 @@
                     <h1 class="page-title">
                         {{ detail.fields.title }}
                     </h1>
-                    <div class="catalog-page__specs">
+                    <div v-if="detail.fields.specs" class="catalog-page__specs">
                         <catalog-specs
                             :specs="detail.fields.specs"
                         ></catalog-specs>

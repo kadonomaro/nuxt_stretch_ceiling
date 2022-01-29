@@ -32,6 +32,14 @@
                 };
             });
         },
+        data() {
+            return {
+                catalog: null,
+                gallery: null,
+                reviews: null,
+                about: null,
+            };
+        },
         head() {
             return {
                 title: "Натяжные потолки",
@@ -45,7 +53,7 @@
         <div class="container">
             <h1 class="page-title">Натяжные потолки в Крыму</h1>
 
-            <div class="main-page__section">
+            <div v-if="catalog" class="main-page__section">
                 <home-catalog :catalog="catalog"></home-catalog>
             </div>
 
@@ -53,15 +61,15 @@
                 <home-work></home-work>
             </div>
 
-            <div class="main-page__section">
+            <div v-if="gallery" class="main-page__section">
                 <home-gallery :gallery="gallery"></home-gallery>
             </div>
 
-            <div class="main-page__section">
+            <div v-if="reviews" class="main-page__section">
                 <home-reviews :reviews="reviews"></home-reviews>
             </div>
 
-            <div class="main-page__section">
+            <div v-if="about" class="main-page__section">
                 <home-about :about="about"></home-about>
             </div>
         </div>
