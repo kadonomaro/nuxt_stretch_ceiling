@@ -21,6 +21,6 @@
     .the-modal-wrapper__title {
         margin-bottom: 24px;
         font-size: 24px;
-        font-weight: 600;
+        font-weight: 500;
     }
 </style>

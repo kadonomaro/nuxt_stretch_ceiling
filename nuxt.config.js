@@ -12,7 +12,7 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        titleTemplate: "%s - Натяжные потолки в Крыму",
+        titleTemplate: "%s - Монтаж современных натяжных потолков в Крыму",
         title: "",
         htmlAttrs: {
             lang: "ru",
@@ -27,7 +27,7 @@ export default {
                 hid: "description",
                 name: "description",
                 content:
-                    "Эксперты в области креативных и нестандартных решений для натяжных потолков в городе Севастополь и в Республике Крым",
+                    "Эксперты в области креативных и нестандартных решений для натяжных потолков в городе Севастополь и в Республике Крым. Высокое качество и доступные цены",
             },
             { name: "format-detection", content: "telephone=no" },
         ],
