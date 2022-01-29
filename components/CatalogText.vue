@@ -9,13 +9,21 @@
         },
         data() {
             return {
-                paragraphsCount: 1,
                 buttonText: "Показать описание",
+                isVisibleText: false,
             };
         },
         computed: {
-            computeParagraphs() {
-                return this.text.slice(0, this.paragraphsCount);
+            startParagraph() {
+                return this.text[0];
+            },
+            endParagraph() {
+                return this.text.slice(1, this.text.length);
+            },
+            moreTextButton() {
+                return this.isVisibleText
+                    ? "Скрыть описание"
+                    : "Показать описание";
             },
         },
         methods: {
@@ -35,13 +43,11 @@
                 });
             },
             toggleParagraphs() {
-                if (this.paragraphsCount === this.text.length) {
-                    this.paragraphsCount = 1;
-                    this.buttonText = "Показать описание";
+                if (this.isVisibleText) {
+                    this.isVisibleText = false;
                     this.scrollTo();
                 } else {
-                    this.paragraphsCount = this.text.length;
-                    this.buttonText = "Скрыть описание";
+                    this.isVisibleText = true;
                 }
             },
         },
@@ -50,7 +56,12 @@
 
 <template>
     <div ref="text" class="catalog-text typography box-shadow">
-        <transition-group
+        <div class="catalog-text__paragraph">
+            <p>
+                {{ startParagraph.content[0].value }}
+            </p>
+        </div>
+        <transition
             name="slide-down"
             tag="div"
             @enter="start"
@@ -58,23 +69,19 @@
             @before-leave="start"
             @after-leave="end"
         >
-            <div
-                v-for="(paragraph, i) in computeParagraphs"
-                :key="i * 2"
-                class="catalog-text__paragraph"
-            >
-                <p>
+            <div v-show="isVisibleText" class="catalog-text__paragraph">
+                <p v-for="(paragraph, i) in endParagraph" :key="i * 2">
                     {{ paragraph.content[0].value }}
                 </p>
             </div>
-        </transition-group>
+        </transition>
 
         <button
             v-if="text.length > 1"
             class="catalog-text__button"
             @click="toggleParagraphs"
         >
-            {{ buttonText }}
+            {{ moreTextButton }}
         </button>
     </div>
 </template>

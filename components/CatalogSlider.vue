@@ -178,6 +178,7 @@
     .catalog-slider__thumbs-slider {
         @include bp($bp-desktop-sm) {
             height: 620px;
+            max-height: 100%;
         }
     }
 
