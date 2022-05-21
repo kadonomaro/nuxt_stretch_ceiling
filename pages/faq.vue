@@ -1,31 +1,28 @@
 <script>
-    import { createClient } from "~/plugins/contentful.js";
     import TheAccordion from "~/components/common/TheAccordion";
-
-    const client = createClient();
 
     export default {
         name: "HelpPage",
         components: {
             TheAccordion,
         },
-        asyncData() {
-            return client
+        data() {
+            return {
+                faq: null,
+                activeIndex: 0,
+            };
+        },
+        async fetch() {
+            await this.$api
                 .getEntries({
                     content_type: "faq",
                     order: "-sys.createdAt",
                 })
                 .then(({ items }) => {
-                    return {
-                        faq: items,
-                    };
+                    this.faq = items;
                 });
         },
-        data() {
-            return {
-                activeIndex: 0,
-            };
-        },
+
         head() {
             return {
                 title: "Ответы на частые вопросы",

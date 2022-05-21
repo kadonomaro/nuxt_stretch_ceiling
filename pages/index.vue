@@ -1,12 +1,9 @@
 <script>
-    import { createClient } from "~/plugins/contentful.js";
     import HomeCatalog from "~/components/HomeCatalog";
     import HomeWork from "~/components/HomeWork";
     import HomeGallery from "~/components/HomeGallery";
     import HomeReviews from "~/components/HomeReviews";
     import HomeAbout from "~/components/HomeAbout";
-
-    const client = createClient();
 
     export default {
         name: "IndexPage",
@@ -17,34 +14,6 @@
             HomeReviews,
             HomeAbout,
         },
-        asyncData() {
-            return Promise.all([
-                client.getEntries({
-                    content_type: "ceiling_type",
-                    order: "-sys.createdAt",
-                }),
-                client.getEntries({
-                    content_type: "gallery",
-                    order: "-sys.createdAt",
-                }),
-                client.getEntries({
-                    content_type: "reviews",
-                    order: "-fields.date",
-                    limit: 5,
-                }),
-                client.getEntries({
-                    content_type: "about",
-                    order: "-sys.createdAt",
-                }),
-            ]).then((response) => {
-                return {
-                    catalog: response[0].items,
-                    gallery: response[1].items,
-                    reviews: response[2].items,
-                    about: response[3].items[0],
-                };
-            });
-        },
         data() {
             return {
                 catalog: null,
@@ -52,6 +21,32 @@
                 reviews: null,
                 about: null,
             };
+        },
+        async fetch() {
+            await Promise.all([
+                this.$api.getEntries({
+                    content_type: "ceiling_type",
+                    order: "-sys.createdAt",
+                }),
+                this.$api.getEntries({
+                    content_type: "gallery",
+                    order: "-sys.createdAt",
+                }),
+                this.$api.getEntries({
+                    content_type: "reviews",
+                    order: "-fields.date",
+                    limit: 5,
+                }),
+                this.$api.getEntries({
+                    content_type: "about",
+                    order: "-sys.createdAt",
+                }),
+            ]).then(([catalog, gallery, reviews, about]) => {
+                this.catalog = catalog.items;
+                this.gallery = gallery.items;
+                this.reviews = reviews.items;
+                this.about = about.items[0];
+            });
         },
         head() {
             return {

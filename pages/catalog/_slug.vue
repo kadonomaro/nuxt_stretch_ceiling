@@ -1,38 +1,35 @@
 <script>
-    import { createClient } from "~/plugins/contentful.js";
     import BaseButton from "~/components/common/BaseButton";
     import CatalogSlider from "~/components/CatalogSlider";
     import CatalogSpecs from "~/components/CatalogSpecs";
     import CatalogText from "~/components/CatalogText";
 
-    const client = createClient();
-
     export default {
         name: "CatalogPage",
-        components: { BaseButton, CatalogSlider, CatalogSpecs, CatalogText },
-        asyncData({ params, error }) {
-            return client
-                .getEntries({
-                    content_type: "detail",
-                    "fields.slug[in]": params.slug || "",
-                })
-                .then(({ items }) => {
-                    if (items.length) {
-                        return {
-                            detail: items[0],
-                        };
-                    } else {
-                        throw new Error("Page not found");
-                    }
-                })
-                .catch((err) => {
-                    error(err);
-                });
+        components: {
+            BaseButton,
+            CatalogSlider,
+            CatalogSpecs,
+            CatalogText,
         },
         data() {
             return {
                 detail: null,
             };
+        },
+        async fetch() {
+            await this.$api
+                .getEntries({
+                    content_type: "detail",
+                    "fields.slug[in]": this.$route.params.slug || "",
+                })
+                .then(({ items }) => {
+                    if (items.length) {
+                        this.detail = items[0];
+                    } else {
+                        throw new Error("Page not found");
+                    }
+                });
         },
         head() {
             return {

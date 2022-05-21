@@ -1,9 +1,6 @@
 <script>
-    import { createClient } from "~/plugins/contentful.js";
     import AboutContacts from "~/components/AboutContacts";
     import AboutReviews from "~/components/AboutReviews";
-
-    const client = createClient();
 
     export default {
         name: "AboutPage",
@@ -11,16 +8,19 @@
             AboutContacts,
             AboutReviews,
         },
-        asyncData() {
-            return client
+        data() {
+            return {
+                reviews: null,
+            };
+        },
+        async fetch() {
+            await this.$api
                 .getEntries({
                     content_type: "reviews",
                     order: "-fields.date",
                 })
                 .then(({ items }) => {
-                    return {
-                        reviews: items,
-                    };
+                    this.reviews = items;
                 });
         },
         head() {

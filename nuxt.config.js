@@ -1,9 +1,9 @@
 const config = require("./.contentful.json");
-const contentful = require("contentful");
+const { createClient } = require("contentful");
 
-const client = contentful.createClient({
-    space: "0rwtfw90ylg8",
-    accessToken: "wgPUSGDRJVUgc_KD5yOvLNUJm6drhGWuywkI3tKA6oE",
+const client = createClient({
+    space: config.CTF_SPACE_ID,
+    accessToken: config.CTF_CDA_ACCESS_TOKEN,
 });
 
 export default {
@@ -69,6 +69,7 @@ export default {
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
+        { src: "~/plugins/contentful.js" },
         { src: "~/plugins/event-bus.js" },
         { src: "~/plugins/modals.js" },
         { src: "~/plugins/global.js" },
