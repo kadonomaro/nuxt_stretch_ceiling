@@ -1,9 +1,16 @@
 <script>
     import { createClient } from "~/plugins/contentful.js";
+    import AboutContacts from "~/components/AboutContacts";
+    import AboutReviews from "~/components/AboutReviews";
+
     const client = createClient();
 
     export default {
         name: "AboutPage",
+        components: {
+            AboutContacts,
+            AboutReviews,
+        },
         asyncData() {
             return client
                 .getEntries({

@@ -1,8 +1,12 @@
 <script>
     import Swiper from "swiper/swiper-bundle.min";
+    import HomeGalleryCard from "~/components/HomeGalleryCard";
 
     export default {
         name: "HomeGallery",
+        components: {
+            HomeGalleryCard,
+        },
         props: {
             gallery: {
                 type: Array,

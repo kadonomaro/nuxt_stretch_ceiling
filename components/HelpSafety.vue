@@ -4,7 +4,7 @@
     };
 </script>
 
-<template>
+<template functional>
     <section id="safety" class="help-safety typography box-shadow">
         <h2 class="section-title">Безопасность</h2>
         <div class="help-safety__text">

@@ -1,6 +1,11 @@
 <script>
+    import AboutReviewsCard from "~/components/AboutReviewsCard";
+
     export default {
         name: "AboutReviews",
+        components: {
+            AboutReviewsCard,
+        },
         props: {
             reviews: {
                 type: Array,

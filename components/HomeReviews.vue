@@ -1,8 +1,12 @@
 <script>
     import Swiper from "swiper/swiper-bundle.min";
+    import AboutReviewsCard from "~/components/AboutReviewsCard";
 
     export default {
         name: "HomeReviews",
+        components: {
+            AboutReviewsCard,
+        },
         props: {
             reviews: {
                 type: Array,

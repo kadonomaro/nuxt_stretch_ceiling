@@ -1,5 +1,6 @@
 <script>
     import TheSvgIcon from "~/components/common/TheSvgIcon";
+
     export default {
         name: "AboutContacts",
         components: { TheSvgIcon },

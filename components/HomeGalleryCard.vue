@@ -1,5 +1,6 @@
 <script>
     import ResponsiveImage from "~/components/common/ResponsiveImage";
+
     export default {
         name: "HomeGalleryCard",
         components: { ResponsiveImage },

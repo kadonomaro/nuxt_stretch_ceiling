@@ -1,9 +1,22 @@
 <script>
     import { createClient } from "~/plugins/contentful.js";
+    import HomeCatalog from "~/components/HomeCatalog";
+    import HomeWork from "~/components/HomeWork";
+    import HomeGallery from "~/components/HomeGallery";
+    import HomeReviews from "~/components/HomeReviews";
+    import HomeAbout from "~/components/HomeAbout";
+
     const client = createClient();
 
     export default {
         name: "IndexPage",
+        components: {
+            HomeCatalog,
+            HomeWork,
+            HomeGallery,
+            HomeReviews,
+            HomeAbout,
+        },
         asyncData() {
             return Promise.all([
                 client.getEntries({
@@ -17,7 +30,7 @@
                 client.getEntries({
                     content_type: "reviews",
                     order: "-fields.date",
-                    limit: 6,
+                    limit: 5,
                 }),
                 client.getEntries({
                     content_type: "about",

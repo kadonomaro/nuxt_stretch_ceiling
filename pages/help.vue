@@ -1,6 +1,13 @@
 <script>
+    import HelpAdvice from "~/components/HelpAdvice";
+    import HelpSafety from "~/components/HelpSafety";
+
     export default {
         name: "HelpPage",
+        components: {
+            HelpAdvice,
+            HelpSafety,
+        },
         head() {
             return {
                 title: "Советы по выбору натяжных потолков",

@@ -1,6 +1,11 @@
 <script>
+    import HomeCatalogCard from "~/components/HomeCatalogCard";
+
     export default {
         name: "HomeCatalog",
+        components: {
+            HomeCatalogCard,
+        },
         props: {
             catalog: {
                 type: Array,

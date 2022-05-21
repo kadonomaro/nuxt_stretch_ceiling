@@ -4,7 +4,7 @@
     };
 </script>
 
-<template>
+<template functional>
     <section id="advice" class="help-advice typography box-shadow">
         <h2 class="section-title">Советы по выбору</h2>
         <div class="help-advice__text">
