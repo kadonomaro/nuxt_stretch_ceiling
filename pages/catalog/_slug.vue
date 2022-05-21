@@ -1,13 +1,15 @@
 <script>
     import { createClient } from "~/plugins/contentful.js";
     import BaseButton from "~/components/common/BaseButton";
+    import CatalogSlider from "~/components/CatalogSlider";
+    import CatalogSpecs from "~/components/CatalogSpecs";
     import CatalogText from "~/components/CatalogText";
 
     const client = createClient();
 
     export default {
         name: "CatalogPage",
-        components: { CatalogText, BaseButton },
+        components: { BaseButton, CatalogSlider, CatalogSpecs, CatalogText },
         asyncData({ params, error }) {
             return client
                 .getEntries({
