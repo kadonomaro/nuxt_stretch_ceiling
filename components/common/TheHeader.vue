@@ -2,6 +2,7 @@
     import TheHeaderTop from "~/components/common/TheHeaderTop";
     import TheHeaderMain from "~/components/common/TheHeaderMain";
     import TheHeaderMobile from "~/components/common/TheHeaderMobile";
+
     export default {
         name: "TheHeader",
         components: { TheHeaderMobile, TheHeaderMain, TheHeaderTop },

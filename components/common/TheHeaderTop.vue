@@ -2,6 +2,7 @@
     import TheLogo from "~/components/common/TheLogo";
     import TheCallbackButton from "~/components/common/TheCallbackButton";
     import TheSvgIcon from "~/components/common/TheSvgIcon";
+
     export default {
         name: "TheHeaderTop",
         components: { TheSvgIcon, TheCallbackButton, TheLogo },

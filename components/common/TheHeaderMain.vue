@@ -1,5 +1,6 @@
 <script>
     import TheTopNavigation from "~/components/common/TheTopNavigation";
+
     export default {
         name: "TheHeaderMain",
         components: { TheTopNavigation },

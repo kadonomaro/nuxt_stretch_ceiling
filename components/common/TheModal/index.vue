@@ -122,6 +122,7 @@
 
     .base-popup--gallery {
         max-width: 900px;
+        padding: 0;
         .base-popup__close {
             top: -25px;
             right: -25px;

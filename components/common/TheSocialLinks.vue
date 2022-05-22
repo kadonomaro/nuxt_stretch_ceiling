@@ -4,7 +4,7 @@
     };
 </script>
 
-<template>
+<template functional>
     <div class="the-social-links">
         <ul class="the-social-links__list">
             <li class="the-social-links__item">
@@ -18,16 +18,7 @@
             </li>
             <li class="the-social-links__item">
                 <a
-                    href="viber://pa?chatURI=+79111111111"
-                    class="the-social-links__link"
-                    target="_blank"
-                >
-                    <img src="/icons/viber.svg" alt="Viber" />
-                </a>
-            </li>
-            <li class="the-social-links__item">
-                <a
-                    href="http://telegram.me/Makcim_Prusakov"
+                    href="http://telegram.me/"
                     class="the-social-links__link"
                     target="_blank"
                 >
@@ -36,7 +27,7 @@
             </li>
             <li class="the-social-links__item">
                 <a
-                    href="https://www.instagram.com/prusakov_m/"
+                    href="https://www.instagram.com/"
                     class="the-social-links__link"
                     target="_blank"
                 >
@@ -65,6 +56,8 @@
             width: 100%;
         }
         @include bp($bp-desktop-sm) {
+            width: 32px;
+            height: 32px;
             transition: transform 0.2s ease-in;
             &:hover {
                 transform: translateY(-2px);
