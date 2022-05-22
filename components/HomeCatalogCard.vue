@@ -85,7 +85,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background-color: $color-accent;
+            border: 2px solid $color-accent;
             opacity: 0;
             transition: opacity 0.2s ease-in, transform 0.2s ease-in;
             will-change: transform;

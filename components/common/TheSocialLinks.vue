@@ -9,7 +9,7 @@
         <ul class="the-social-links__list">
             <li class="the-social-links__item">
                 <a
-                    href="https://wa.me/+79785860623"
+                    href="https://wa.me/+79111111111"
                     class="the-social-links__link"
                     target="_blank"
                 >
@@ -18,7 +18,7 @@
             </li>
             <li class="the-social-links__item">
                 <a
-                    href="viber://pa?chatURI=+79785860623"
+                    href="viber://pa?chatURI=+79111111111"
                     class="the-social-links__link"
                     target="_blank"
                 >

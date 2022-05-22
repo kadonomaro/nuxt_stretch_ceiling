@@ -22,7 +22,7 @@
             this.$nextTick(() => {
                 this.slider = new Swiper(".js-reviews-slider", {
                     spaceBetween: 20,
-                    slidesPerView: 1,
+                    slidesPerView: 1.2,
                     direction: "horizontal",
                     grabCursor: true,
                     mousewheel: {
@@ -80,12 +80,21 @@
 <style lang="scss">
     .home-reviews__slider {
         position: relative;
+        margin: 0 -16px;
+        @include bp($bp-desktop-sm) {
+            margin: 0;
+        }
         .swiper-pagination-reviews {
-            width: 100%;
+            width: calc(100% - 32px);
             height: 2px;
+            margin: 0 16px;
             border-radius: 3px;
             overflow: hidden;
             background-color: $color-border;
+            @include bp($bp-desktop-sm) {
+                width: 100%;
+                margin: 0;
+            }
         }
         .swiper-slide {
             height: auto;

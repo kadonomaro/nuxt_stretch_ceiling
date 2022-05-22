@@ -17,10 +17,10 @@
                 </div>
                 <div class="the-header-top__location">
                     <the-svg-icon name="location"></the-svg-icon>
-                    <span>Республика Крым</span>
+                    <span>Москва</span>
                 </div>
-                <a href="tel:79785860623" class="the-header-top__phone">
-                    +7 (978) 586 06-23
+                <a href="tel:79111111111" class="the-header-top__phone">
+                    +7 (911) 111 11-11
                 </a>
                 <div class="the-header-top__callback">
                     <the-callback-button></the-callback-button>
@@ -35,7 +35,7 @@
         display: none;
         @include bp($bp-desktop-sm) {
             display: block;
-            padding: 5px 0;
+            padding: 8px 0;
             background-color: #fff;
             border-bottom: 1px solid $color-border;
         }

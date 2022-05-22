@@ -59,7 +59,7 @@
 <template>
     <div class="main-page page">
         <div class="container">
-            <h1 class="page-title">Натяжные потолки в Крыму</h1>
+            <h1 class="page-title">Натяжные потолки в Москве</h1>
 
             <div v-if="catalog" class="main-page__section">
                 <home-catalog :catalog="catalog"></home-catalog>

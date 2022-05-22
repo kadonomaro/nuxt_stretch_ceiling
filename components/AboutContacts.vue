@@ -14,27 +14,18 @@
             <div class="about-contacts__text">
                 <div class="about-contacts__item">
                     <the-svg-icon name="geo"></the-svg-icon>
-                    г. Севастополь, просп. Нахимова, 13
+                    г. Москва, Пресненская набережная, 2
                 </div>
                 <div class="about-contacts__item">
                     <the-svg-icon name="phone"></the-svg-icon>
-                    <a class="about-contacts__link" href="tel:+79785860623">
-                        +7 (978) 586 06-23
-                    </a>
-                </div>
-                <div class="about-contacts__item">
-                    <the-svg-icon name="phone"></the-svg-icon>
-                    <a class="about-contacts__link" href="tel:+79782385740">
-                        +7 (978) 238 57-40
+                    <a class="about-contacts__link" href="tel:+79111111111">
+                        +7 (911) 111 11-11
                     </a>
                 </div>
                 <div class="about-contacts__item">
                     <the-svg-icon name="mail"></the-svg-icon>
-                    <a
-                        class="about-contacts__link"
-                        href="mailto:barneo.sev@yandex.ru"
-                    >
-                        barneo.sev@yandex.ru
+                    <a class="about-contacts__link" href="mailto:test@test.ru">
+                        test@test.ru
                     </a>
                 </div>
                 <div class="about-contacts__item">

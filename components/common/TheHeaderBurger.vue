@@ -67,7 +67,7 @@
             display: block;
             width: 100%;
             height: 2px;
-            background-color: $color-base;
+            background-color: $color-accent;
             transform-origin: center;
             transition: transform 0.2s ease-in, opacity 0.2s ease-in;
             &:first-child {
