@@ -30,7 +30,7 @@
             >
                 <div class="home-work__icon">
                     <img
-                        :src="`/images/home/${item.icon}.svg`"
+                        :src="`/icons/home/${item.icon}.svg`"
                         :alt="item.title"
                     />
                 </div>

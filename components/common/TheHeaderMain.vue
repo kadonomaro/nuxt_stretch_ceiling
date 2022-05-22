@@ -18,7 +18,7 @@
                     class="the-header-main__button"
                     @click="$popup.show('ModalCalc')"
                 >
-                    <img src="/images/home/ruler.svg" alt="" />
+                    <img src="/icons/home/ruler.svg" alt="" />
                     Бесплатный замер
                 </button>
             </div>

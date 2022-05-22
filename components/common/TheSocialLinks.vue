@@ -1,37 +1,30 @@
 <script>
     export default {
         name: "TheSocialLinks",
+        links() {
+            return [
+                { href: "https://wa.me/+79111111111", icon: "whatsapp.svg" },
+                { href: "http://telegram.me/", icon: "telegram.svg" },
+                { href: "https://www.instagram.com/", icon: "instagram.svg" },
+            ];
+        },
     };
 </script>
 
 <template functional>
     <div class="the-social-links">
         <ul class="the-social-links__list">
-            <li class="the-social-links__item">
+            <li
+                v-for="(link, index) in $options.links()"
+                :key="index"
+                class="the-social-links__item"
+            >
                 <a
-                    href="https://wa.me/+79111111111"
+                    :href="link.href"
                     class="the-social-links__link"
                     target="_blank"
                 >
-                    <img src="/icons/whatsapp.svg" alt="WhatsApp" />
-                </a>
-            </li>
-            <li class="the-social-links__item">
-                <a
-                    href="http://telegram.me/"
-                    class="the-social-links__link"
-                    target="_blank"
-                >
-                    <img src="/icons/telegram.svg" alt="Telegram" />
-                </a>
-            </li>
-            <li class="the-social-links__item">
-                <a
-                    href="https://www.instagram.com/"
-                    class="the-social-links__link"
-                    target="_blank"
-                >
-                    <img src="/icons/instagram.svg" alt="Instagram" />
+                    <img :src="`/icons/social/${link.icon}`" alt="" />
                 </a>
             </li>
         </ul>
