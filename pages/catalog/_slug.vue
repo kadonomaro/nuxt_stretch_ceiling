@@ -24,17 +24,26 @@
                     "fields.slug[in]": this.$route.params.slug || "",
                 })
                 .then(({ items }) => {
-                    if (items.length) {
-                        this.detail = items[0];
-                    } else {
+                    if (!items.length) {
                         throw new Error("Page not found");
                     }
+                    this.detail = items[0];
+                })
+                .catch(() => {
+                    this.$nuxt.context.error({ statusCode: 404 });
                 });
         },
         head() {
             return {
                 title: this.detail?.fields?.title,
             };
+        },
+        methods: {
+            openModal() {
+                this.$popup.show("ModalCalc", {
+                    target: this.detail.fields.title,
+                });
+            },
         },
     };
 </script>
@@ -68,13 +77,7 @@
                     <div class="catalog-page__price">
                         от <span>{{ detail.fields.price }}</span> ₽ за м²
                     </div>
-                    <base-button
-                        @click="
-                            $popup.show('ModalCalc', {
-                                target: detail.fields.title,
-                            })
-                        "
-                    >
+                    <base-button @click="openModal">
                         Бесплатный замер
                     </base-button>
                 </aside>

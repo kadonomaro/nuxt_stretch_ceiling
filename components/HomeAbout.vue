@@ -127,6 +127,7 @@
         padding: 0 4px;
         div {
             &:first-child {
+                color: $color-accent;
                 font-size: 28px;
                 font-weight: 600;
             }
