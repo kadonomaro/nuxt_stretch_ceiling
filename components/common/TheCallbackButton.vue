@@ -43,8 +43,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 30px;
-        height: 30px;
+        width: 32px;
+        height: 32px;
         margin-right: 6px;
         background-color: $color-accent;
         border-radius: 50%;

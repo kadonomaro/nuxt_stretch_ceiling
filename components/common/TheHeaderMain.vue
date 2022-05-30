@@ -48,19 +48,21 @@
     }
 
     .the-header-main__button {
-        display: flex;
-        align-items: center;
-        font-size: 16px;
-        line-height: 20px;
-        font-weight: 500;
-        transition: color 0.2s ease-in;
-        &:hover {
-            color: $color-accent;
-        }
-        img {
-            width: 24px;
-            height: 24px;
-            margin-right: 6px;
+        @include bp($bp-desktop-sm) {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 500;
+            transition: color 0.2s ease-in;
+            &:hover {
+                color: $color-accent;
+            }
+            img {
+                width: 24px;
+                height: 24px;
+                margin-right: 6px;
+            }
         }
     }
 </style>

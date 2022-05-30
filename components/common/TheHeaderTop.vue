@@ -43,9 +43,11 @@
     }
 
     .the-header-top__inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include bp($bp-desktop-sm) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 
     .the-header-top__logo {
@@ -55,7 +57,6 @@
     }
 
     .the-header-top__location {
-        display: none;
         @include bp($bp-desktop-sm) {
             display: flex;
             margin-right: auto;
@@ -71,38 +72,35 @@
     }
 
     .the-header-top__phone {
-        position: relative;
-        color: $color-base;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 20px;
-        white-space: nowrap;
-        text-decoration: none;
-        &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -2px;
-            height: 1px;
-            background-color: currentColor;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-        &:hover {
-            &::before {
-                opacity: 1;
-            }
-        }
         @include bp($bp-desktop-sm) {
+            position: relative;
+            color: $color-base;
             font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            white-space: nowrap;
+            text-decoration: none;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -2px;
+                height: 1px;
+                background-color: currentColor;
+                opacity: 0;
+                transition: opacity 0.2s ease;
+            }
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+            }
         }
     }
 
     .the-header-top__callback {
-        display: none;
         @include bp($bp-desktop-sm) {
-            display: block;
             margin-left: 30px;
         }
     }
