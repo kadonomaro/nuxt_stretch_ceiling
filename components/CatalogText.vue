@@ -98,7 +98,9 @@
 
     .catalog-text__paragraph {
         p {
-            margin-bottom: 12px;
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
         }
     }
 

@@ -3,12 +3,16 @@
         name: "ThePreloader",
         props: {
             show: Boolean,
+            size: {
+                type: String,
+                default: "sm",
+            },
         },
     };
 </script>
 
 <template>
-    <div v-if="show" class="the-preloader">
+    <div v-if="show" class="the-preloader" :class="[`the-preloader--${size}`]">
         <div class="the-preloader__inner">
             <div class="the-preloader__item"></div>
             <div class="the-preloader__item"></div>
@@ -24,6 +28,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .the-preloader--lg {
+        --preloader-size: 40px;
     }
 
     .the-preloader__inner {

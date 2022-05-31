@@ -106,6 +106,12 @@
                                     :alt="image.fields.description"
                                 />
                             </picture>
+                            <div class="swiper-preloader">
+                                <the-preloader
+                                    :show="true"
+                                    size="lg"
+                                ></the-preloader>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -142,6 +148,9 @@
                                 :alt="image.fields.description"
                             />
                         </picture>
+                        <div class="swiper-preloader">
+                            <the-preloader :show="true"></the-preloader>
+                        </div>
                     </div>
                 </div>
             </div>

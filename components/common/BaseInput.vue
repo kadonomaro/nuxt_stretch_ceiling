@@ -113,7 +113,8 @@
     }
 
     .base-input__field {
-        width: inherit;
+        display: block;
+        width: 100%;
         color: $color-base;
         font-family: inherit;
         font-size: 16px;
