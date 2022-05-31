@@ -68,11 +68,11 @@
                         this.isLoading = false;
                         if (data.success) {
                             this.isSuccess = true;
-                        } else {
-                            data.errors.forEach((error) => {
-                                this.errors[error.param] = error.msg;
-                            });
+                            return;
                         }
+                        data.errors.forEach((error) => {
+                            this.errors[error.param] = error.msg;
+                        });
                     });
             },
             clearError(field) {

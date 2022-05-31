@@ -4,7 +4,7 @@
     };
 </script>
 
-<template>
+<template functional>
     <NuxtLink class="the-logo" :to="{ name: 'index' }">
         <img src="/images/logo.svg" alt="Натяжные потолки" />
     </NuxtLink>

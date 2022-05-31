@@ -46,7 +46,11 @@
         },
         computed: {
             className() {
-                return this.componentClassNames("base-input").filter(Boolean);
+                return [
+                    this.disabled ? "base-input--disabled" : "",
+                    this.error ? "base-input--error" : "",
+                    String(this.value).length > 0 ? "base-input--active" : "",
+                ].filter(Boolean);
             },
         },
         watch: {
@@ -55,13 +59,6 @@
             },
         },
         methods: {
-            componentClassNames(className) {
-                return [
-                    this.disabled ? `${className}--disabled` : "",
-                    this.error ? `${className}--error` : "",
-                    String(this.value).length > 0 ? `${className}--active` : "",
-                ];
-            },
             keyupElement({ key, target }) {
                 if (key !== "Enter") {
                     this.error = "";

@@ -63,10 +63,8 @@
             </div>
             <div
                 v-if="reviews.length > 1"
-                class="home-reviews__slider-pagination"
-            >
-                <div class="swiper-pagination-reviews"></div>
-            </div>
+                class="swiper-pagination-reviews"
+            ></div>
         </div>
         <NuxtLink
             class="home-reviews__link base-button"
@@ -99,13 +97,12 @@
         .swiper-slide {
             height: auto;
         }
+        .swiper-container {
+            padding-bottom: 15px;
+        }
         .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
             background-color: $color-accent;
         }
-    }
-
-    .home-reviews__slider-pagination {
-        padding-top: 15px;
     }
 
     .home-reviews__link {
