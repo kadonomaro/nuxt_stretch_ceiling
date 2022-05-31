@@ -95,6 +95,7 @@
             right: 0;
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
         @include bp($bp-desktop-sm) {
             flex-basis: 55%;

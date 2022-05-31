@@ -25,9 +25,11 @@
             </div>
         </div>
         <div class="the-footer-top__side">
-            <div class="the-footer-top__title">Наши контакты</div>
-            <div class="the-footer-top__social">
-                <the-social-links></the-social-links>
+            <div class="the-footer-top__contacts">
+                <div class="the-footer-top__title">Наши контакты</div>
+                <div class="the-footer-top__social">
+                    <the-social-links></the-social-links>
+                </div>
             </div>
             <div class="the-footer-top__title">График работы</div>
             <div class="the-footer-top__work">Пн-Вс с 8:00 до 20:00</div>
@@ -48,8 +50,10 @@
     }
 
     .the-footer-top__main {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -8px;
         @include bp($bp-desktop-sm) {
-            display: flex;
             flex-basis: 75%;
             flex-grow: 1;
         }
@@ -69,10 +73,13 @@
     }
 
     .the-footer-top__col {
+        flex-basis: 50%;
+        max-width: 50%;
         margin-bottom: 24px;
+        padding: 0 8px;
         @include bp($bp-desktop-sm) {
-            flex-basis: calc(100% / 3);
-            max-width: calc(100% / 3);
+            flex-basis: 33.33%;
+            max-width: 33.33%;
             margin-bottom: 0;
         }
     }

@@ -1,6 +1,8 @@
 <script>
+    import TheSvgIcon from "~/components/common/TheSvgIcon";
     export default {
         name: "CatalogText",
+        components: { TheSvgIcon },
         props: {
             text: {
                 type: Array,
@@ -82,6 +84,10 @@
             @click="toggleParagraphs"
         >
             {{ moreTextButton }}
+            <the-svg-icon
+                :class="{ 'is-opened': isVisibleText }"
+                name="arrow"
+            ></the-svg-icon>
         </button>
     </div>
 </template>
@@ -105,10 +111,24 @@
     }
 
     .catalog-text__button {
+        position: relative;
         padding: 8px 0;
         color: $color-accent;
         font-size: 14px;
         font-weight: 500;
         user-select: none;
+        svg {
+            position: absolute;
+            top: 10px;
+            right: -16px;
+            width: 12px;
+            height: 12px;
+            fill: $color-accent;
+            transform: rotate(-90deg);
+            transition: transform 0.2s ease-in;
+            &.is-opened {
+                transform: rotate(90deg);
+            }
+        }
     }
 </style>
