@@ -34,7 +34,7 @@
                     },
                     breakpoints: {
                         991: {
-                            spaceBetween: 10,
+                            spaceBetween: 12,
                             slidesPerView: 3,
                         },
                     },

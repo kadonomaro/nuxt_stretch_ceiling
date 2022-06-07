@@ -43,7 +43,9 @@
                 }),
             ]).then(([catalog, gallery, reviews, about]) => {
                 this.catalog = catalog.items;
-                this.gallery = gallery.items;
+                this.gallery = gallery.items.sort((a, b) => {
+                    return a.fields.sort - b.fields.sort;
+                });
                 this.reviews = reviews.items;
                 this.about = about.items[0];
             });

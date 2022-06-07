@@ -43,18 +43,14 @@
 
     .the-social-links__link {
         display: block;
-        width: 24px;
-        height: 24px;
+        width: 32px;
+        height: 32px;
+        transition: transform 0.2s ease-in;
         img {
             width: 100%;
         }
-        @include bp($bp-desktop-sm) {
-            width: 32px;
-            height: 32px;
-            transition: transform 0.2s ease-in;
-            &:hover {
-                transform: translateY(-2px);
-            }
+        &:hover {
+            transform: translateY(-2px);
         }
     }
 </style>

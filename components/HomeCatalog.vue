@@ -41,20 +41,20 @@
     .home-catalog__list {
         display: flex;
         flex-wrap: wrap;
-        margin: 0 -6px -12px;
+        margin: 0 -6px -16px;
         @include bp($bp-desktop-sm) {
-            margin: 0 -12px -24px;
+            //margin: 0 -8px -16px;
         }
     }
 
     .home-catalog__card {
         flex-basis: 50%;
         max-width: 50%;
-        padding: 0 6px 18px;
+        padding: 0 6px 16px;
         @include bp($bp-desktop-sm) {
             flex-basis: 33.3333%;
             max-width: 33.3333%;
-            padding: 0 12px 24px;
+            //padding: 0 8px 16px;
         }
     }
 </style>
