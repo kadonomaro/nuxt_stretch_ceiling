@@ -42,9 +42,6 @@
         display: flex;
         flex-wrap: wrap;
         margin: 0 -6px -16px;
-        @include bp($bp-desktop-sm) {
-            //margin: 0 -8px -16px;
-        }
     }
 
     .home-catalog__card {
@@ -54,7 +51,6 @@
         @include bp($bp-desktop-sm) {
             flex-basis: 33.3333%;
             max-width: 33.3333%;
-            //padding: 0 8px 16px;
         }
     }
 </style>

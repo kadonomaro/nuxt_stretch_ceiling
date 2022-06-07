@@ -59,7 +59,7 @@
 
     .home-gallery-card__image {
         position: relative;
-        padding-bottom: 100%;
+        padding-bottom: 75%;
         overflow: hidden;
         &:hover {
             img {
