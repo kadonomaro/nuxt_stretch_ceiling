@@ -30,6 +30,7 @@ export default {
                     "Эксперты в области креативных и нестандартных решений для натяжных потолков в Москве. Высокое качество и доступные цены",
             },
             { name: "format-detection", content: "telephone=no" },
+            { name: "yandex-verification", content: "0530fdf83508c493" },
         ],
         link: [
             {
@@ -119,11 +120,11 @@ export default {
 
     robots: {
         UserAgent: "*",
-        Sitemap: "https://nuxt-stretch-ceiling.web.app/sitemap.xml",
+        Sitemap: "https://ceilings-moscow.web.app/sitemap.xml",
     },
 
     sitemap: {
-        hostname: "https://nuxt-stretch-ceiling.web.app/",
+        hostname: "https://ceilings-moscow.web.app/",
         routes: async () => {
             const response = await client.getEntries({
                 content_type: "ceiling_type",

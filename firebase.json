@@ -1,32 +1,32 @@
 {
-  "hosting": {
-      "public": "dist",
-      "headers": [
-          {
-              "source": "/**",
-              "headers": [
-                  {
-                      "key": "Cache-Control",
-                      "value": "no-cache, no-store, must-revalidate"
-                  }
-              ]
-          },
-          {
-              "source":
-              "**/*.@(jpg|jpeg|png|svg|webp|js|css|woff|woff2)",
-              "headers": [
-                  {
-                      "key": "Cache-Control",
-                      "value": "max-age=604800"
-                  }
-              ]
-          }
-      ],
-     "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-    ]
-  }
+    "hosting": {
+        "public": "dist",
+        "headers": [
+            {
+                "source": "/**",
+                "headers": [
+                    {
+                        "key": "Cache-Control",
+                        "value": "no-cache, no-store, must-revalidate"
+                    }
+                ]
+            },
+            {
+                "source":
+                "**/*.@(jpg|jpeg|png|svg|webp|js|css|woff|woff2)",
+                "headers": [
+                    {
+                        "key": "Cache-Control",
+                        "value": "max-age=604800"
+                    }
+                ]
+            }
+        ],
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ]
+    }
 }
 
